@@ -71,6 +71,7 @@ func killPlayer() -> void:
 
 # Parse command and do something or call some function
 func issueCommand(thisCommand:HUD.Commands) -> void:
+	print("Developer Command: ", HUD.Commands.find_key(thisCommand))
 	match thisCommand:
 		HUD.Commands.winGame:
 			winGame()

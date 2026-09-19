@@ -3,10 +3,6 @@
 [ext_resource type="Theme" uid="uid://cltxyrhbu5idg" path="res://data/themes/mainTheme.tres" id="1_c4vmg"]
 [ext_resource type="Script" uid="uid://dexmvso4k2bsn" path="res://src/UI/hud.gd" id="2_rd3kb"]
 [ext_resource type="PackedScene" uid="uid://cna7gf6c7n2n1" path="res://scenes/UI/dev_button.tscn" id="3_18exe"]
-[ext_resource type="Script" uid="uid://8kmjuy56pruo" path="res://src/UI/devButton.gd" id="3_y5tme"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4vmg"]
-bg_color = Color(0.69411767, 0.039215688, 0.22352941, 1)
 
 [node name="HUD" type="Control" unique_id=1919242333]
 layout_mode = 3
@@ -93,71 +89,40 @@ fit_content = true
 layout_mode = 2
 text = "Win Game"
 
-[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=861165335]
+[node name="devButton2" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1610843552 instance=ExtResource("3_18exe")]
 layout_mode = 2
-size_flags_vertical = 3
-text = "END RUN (LOSE)"
-script = ExtResource("3_y5tme")
+text = "End Run"
 devCommand = 1
 
-[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=2097258840]
+[node name="devButton3" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1483611480 instance=ExtResource("3_18exe")]
 layout_mode = 2
-size_flags_vertical = 3
 text = "restart run"
-script = ExtResource("3_y5tme")
-devCommand = 1
+devCommand = 2
 
-[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=844606314]
+[node name="devButton4" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1491341581 instance=ExtResource("3_18exe")]
 layout_mode = 2
-size_flags_vertical = 3
 text = "kill player"
-script = ExtResource("3_y5tme")
 devCommand = 3
 
-[node name="Button4" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=452087865]
+[node name="devButton5" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=926489865 instance=ExtResource("3_18exe")]
 layout_mode = 2
-size_flags_vertical = 3
-text = "teleport (start)"
-script = ExtResource("3_y5tme")
+text = "teleport start"
 devCommand = 4
 
-[node name="Button5" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=174784662]
+[node name="devButton6" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=183699738 instance=ExtResource("3_18exe")]
 layout_mode = 2
-size_flags_vertical = 3
-text = "teleport (end)"
-script = ExtResource("3_y5tme")
+text = "teleport end"
 devCommand = 5
 
-[node name="Button8" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1485355942]
+[node name="devButton7" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1234564296 instance=ExtResource("3_18exe")]
 layout_mode = 2
-size_flags_vertical = 3
+text = "quit game"
+devCommand = 6
+
+[node name="devButton8" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=784740242 instance=ExtResource("3_18exe")]
+layout_mode = 2
 text = "main menu"
-script = ExtResource("3_y5tme")
 devCommand = 7
-
-[node name="Button6" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1451582662]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-text = "low gravity"
-script = ExtResource("3_y5tme")
-devCommand = 6
-
-[node name="Button7" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1026873590]
-visible = false
-layout_mode = 2
-size_flags_vertical = 3
-text = "do nothing"
-script = ExtResource("3_y5tme")
-devCommand = 1
-
-[node name="quitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1032375317]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_c4vmg")
-text = "QUIT GAME"
-script = ExtResource("3_y5tme")
-devCommand = 6
 
 [node name="VSeparator2" type="VSeparator" parent="MarginContainer/HBoxContainer" unique_id=462424480]
 layout_mode = 2
