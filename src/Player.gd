@@ -21,7 +21,12 @@ func _input(event: InputEvent) -> void:
 	
 	if event.is_action_released("jump") and timer_activated:
 		var time_left = -timer.time_left + 3
-		var direction = Vector2(100,-400) * time_left
+		var changer : int
+		if right_side.visible == true:
+			changer = 1
+		else:
+			changer = -1
+		var direction = Vector2(100 * changer,-400) * time_left
 		disable_standing()
 		apply_impulse(direction)
 		timer_activated = false
