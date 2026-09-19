@@ -91,6 +91,7 @@ fit_content = true
 
 [node name="devButton" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=287198253 instance=ExtResource("3_18exe")]
 layout_mode = 2
+text = "Win Game"
 
 [node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=861165335]
 layout_mode = 2
