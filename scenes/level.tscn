@@ -1,9 +1,3 @@
 [gd_scene format=3 uid="uid://ddj6q6kgkvkck"]
 
 [node name="level" type="Node3D" unique_id=1231438574]
-
-[node name="player" type="CharacterBody3D" parent="." unique_id=113500372]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="player" unique_id=1831892384]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="player" unique_id=206076785]
