@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://csp35cgvvo6js"]
 
 [ext_resource type="Script" uid="uid://onlop1ew4mnp" path="res://src/UI/main_menu.gd" id="1_qwnig"]
+[ext_resource type="Theme" uid="uid://cltxyrhbu5idg" path="res://data/themes/mainTheme.tres" id="1_yonvy"]
 
 [node name="mainMenu" type="Control" unique_id=1142719045]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_yonvy")
 script = ExtResource("1_qwnig")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=292724763]

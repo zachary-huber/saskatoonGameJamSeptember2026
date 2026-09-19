@@ -1,27 +1,6 @@
 [gd_scene format=3 uid="uid://d4hfgxt1op56d"]
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_xh8q5"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_cg4gw"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_0jeyp"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_18exe"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_rd3kb"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_y5tme"]
-
-[sub_resource type="Theme" id="Theme_8jrks"]
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/colors/icon_normal_color = Color(1, 1, 1, 1)
-Button/styles/focus = SubResource("StyleBoxLine_xh8q5")
-Button/styles/hover = SubResource("StyleBoxLine_cg4gw")
-Button/styles/hover_mirrored = SubResource("StyleBoxLine_0jeyp")
-Button/styles/hover_pressed = SubResource("StyleBoxLine_18exe")
-Button/styles/normal = SubResource("StyleBoxLine_rd3kb")
-Button/styles/pressed = SubResource("StyleBoxLine_y5tme")
-RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+[ext_resource type="Theme" uid="uid://cltxyrhbu5idg" path="res://data/themes/mainTheme.tres" id="1_c4vmg"]
 
 [node name="HUD" type="Control" unique_id=1919242333]
 layout_mode = 3
@@ -30,7 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_8jrks")
+theme = ExtResource("1_c4vmg")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=797916515]
 layout_mode = 1
