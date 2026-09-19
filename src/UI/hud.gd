@@ -8,7 +8,8 @@ enum Commands {
 	teleportStart,
 	teleportEnd,
 	quitGame,
-	mainMenu
+	mainMenu,
+	startRun
 }
 
 func _ready() -> void:

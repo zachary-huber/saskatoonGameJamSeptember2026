@@ -40,7 +40,7 @@ grow_vertical = 2
 [node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=581269730]
 layout_mode = 2
 size_flags_vertical = 3
-color = Color(5.1018596e-06, 0.6111962, 0.6530462, 1)
+color = Color(0, 0.6117647, 0.654902, 0.12156863)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=976620247]
 layout_mode = 2

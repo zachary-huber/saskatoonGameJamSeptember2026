@@ -29,6 +29,7 @@ func seeMainMenu() -> void:
 func startRun() -> void:
 	setRunStartTimeTicks()
 	resetRunStats()
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 # Exit and shutdown the game application
 func quitGame() -> void:
@@ -85,3 +86,5 @@ func issueCommand(thisCommand:HUD.Commands) -> void:
 			quitGame()
 		HUD.Commands.mainMenu:
 			seeMainMenu()
+		HUD.Commands.startRun:
+			startRun()
