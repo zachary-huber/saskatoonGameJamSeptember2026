@@ -6,11 +6,11 @@ var runCurrentTimeSeconds:int = 0
 var runEndTimeTicks:int = 0
 var currentRunStats:RunStats
 
-## UI stuff
-var gameHUD:HUD = null
+
+@export var isRunOngoing:bool = false
 
 ## register elements
-# NOTE: set the type for this once it is defined by script.
+var gameHUD:HUD = null
 var player:Player = null
 var princess:Princess = null
 
@@ -31,6 +31,7 @@ func startRun() -> void:
 	setRunStartTimeTicks()
 	resetRunStats()
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	isRunOngoing = true
 
 # Exit and shutdown the game application
 func quitGame() -> void:
@@ -44,10 +45,11 @@ func cleanup() -> void:
 # Ends the current run session (status = lose)
 func endRun() -> void:
 	setRunEndTimeTicks()
+	isRunOngoing = false
 
 # Ends the current run session with a WIN status
 func winGame() -> void:
-	pass
+	endRun()
 
 # Start the run from the beginning again, during a run
 func restartRun() -> void:
