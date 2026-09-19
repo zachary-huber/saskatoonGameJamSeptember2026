@@ -11,7 +11,8 @@ var gameHUD:HUD = null
 
 ## register elements
 # NOTE: set the type for this once it is defined by script.
-var player = null
+var player:Player = null
+var princess:Princess = null
 
 
 func _ready() -> void:

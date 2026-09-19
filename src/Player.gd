@@ -1,4 +1,4 @@
-extends RigidBody2D
+class_name Player extends RigidBody2D
 
 var standing : bool = false
 var timer_activated : bool = false

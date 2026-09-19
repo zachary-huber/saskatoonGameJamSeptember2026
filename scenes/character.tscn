@@ -17,6 +17,9 @@ size = Vector2(20, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkhd4"]
 size = Vector2(6, 18)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_wtm8x"]
+radius = 18.248287
+
 [node name="Node2D" type="Node2D" unique_id=172420841]
 
 [node name="chair" type="RigidBody2D" parent="." unique_id=1036139043]
@@ -254,6 +257,12 @@ shape = SubResource("RectangleShape2D_rkhd4")
 position = Vector2(0, -8)
 node_a = NodePath("../../arm")
 node_b = NodePath("..")
+
+[node name="interactArea" type="Area2D" parent="chair" unique_id=526644237]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chair/interactArea" unique_id=679557900]
+position = Vector2(0, -7.67)
+shape = SubResource("CircleShape2D_wtm8x")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=12740159]
 offset_right = 40.0
