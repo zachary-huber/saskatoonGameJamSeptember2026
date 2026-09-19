@@ -9,7 +9,8 @@ enum Commands {
 	teleportEnd,
 	quitGame,
 	mainMenu,
-	startRun
+	startRun,
+	teleportToPrincess
 }
 
 func _ready() -> void:

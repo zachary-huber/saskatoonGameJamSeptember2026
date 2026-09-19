@@ -11,6 +11,7 @@ var timer_activated : bool = false
 @onready var left_side: Node2D = $LeftSide
 
 func _ready() -> void:
+	GameManager.player = self
 	left_side.visible = false
 
 func _input(event: InputEvent) -> void:

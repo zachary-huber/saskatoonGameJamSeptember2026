@@ -89,6 +89,11 @@ fit_content = true
 layout_mode = 2
 text = "Win Game"
 
+[node name="devButton9" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1898307175 instance=ExtResource("3_18exe")]
+layout_mode = 2
+text = "Visit Princess"
+devCommand = 9
+
 [node name="devButton2" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1610843552 instance=ExtResource("3_18exe")]
 layout_mode = 2
 text = "End Run"
