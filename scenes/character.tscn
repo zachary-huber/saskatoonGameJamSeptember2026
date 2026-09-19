@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bxymdpn6xe6mi" path="res://src/Player.gd" id="1_agfs1"]
 [ext_resource type="Texture2D" uid="uid://bkjpv0em6k5ke" path="res://data/textures/tiles_packed.png" id="2_rkhd4"]
+[ext_resource type="Texture2D" uid="uid://5spo53tbu7cn" path="res://data/textures/progressEmpty.png" id="3_my7n2"]
+[ext_resource type="Texture2D" uid="uid://dou52cpi2s56r" path="res://data/textures/progressFilled.png" id="4_dp8ca"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lrhn5"]
 
@@ -19,6 +21,8 @@ size = Vector2(6, 18)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wtm8x"]
 radius = 18.248287
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wtm8x"]
 
 [node name="Node2D" type="Node2D" unique_id=172420841]
 
@@ -264,7 +268,15 @@ node_b = NodePath("..")
 position = Vector2(0, -7.67)
 shape = SubResource("CircleShape2D_wtm8x")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=12740159]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="jumpStrengthProgressBar" type="TextureProgressBar" parent="chair" unique_id=930098547]
+material = SubResource("CanvasItemMaterial_wtm8x")
+offset_left = -26.0
+offset_top = -33.0
+offset_right = 374.0
+offset_bottom = 367.0
+scale = Vector2(0.129, 0.129)
+value = 86.0
 fill_mode = 4
+texture_under = ExtResource("3_my7n2")
+texture_progress = ExtResource("4_dp8ca")
+tint_under = Color(1, 1, 1, 0.06666667)

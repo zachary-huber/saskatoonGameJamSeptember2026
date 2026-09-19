@@ -9,6 +9,7 @@ var timer_activated : bool = false
 @onready var head_sprite: Sprite2D = $head/HeadSprite
 @onready var right_side: Node2D = $RightSide
 @onready var left_side: Node2D = $LeftSide
+@onready var jumpStrengthProgressBar:TextureProgressBar = $"jumpStrengthProgressBar"
 
 func _ready() -> void:
 	GameManager.player = self
