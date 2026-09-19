@@ -254,3 +254,8 @@ shape = SubResource("RectangleShape2D_rkhd4")
 position = Vector2(0, -8)
 node_a = NodePath("../../arm")
 node_b = NodePath("..")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=12740159]
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 4

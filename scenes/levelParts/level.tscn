@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bkjpv0em6k5ke" path="res://data/textures/tiles_packed.png" id="1_2q6dc"]
 [ext_resource type="PackedScene" uid="uid://dd2t61b4rfd4w" path="res://scenes/character.tscn" id="2_w7c3h"]
-[ext_resource type="Texture2D" uid="uid://din757jrudeij" path="res://data/textures/prototype_no_license/147858-professional-woman-business-hd-image-free.png" id="3_y01qp"]
+[ext_resource type="PackedScene" uid="uid://c03im32oyfjbx" path="res://scenes/entities/princess.tscn" id="3_y01qp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w7c3h"]
 texture = ExtResource("1_2q6dc")
@@ -325,21 +325,5 @@ layer_0/tile_data = PackedInt32Array(1, 196608, 0, 65538, 131072, 6, 65539, 1310
 [node name="Node3D" parent="." unique_id=1309050463 instance=ExtResource("2_w7c3h")]
 position = Vector2(70, -57)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=487462943]
-position = Vector2(46.000015, -163.99998)
-scale = Vector2(-0.018, 0.011)
-texture = ExtResource("3_y01qp")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Sprite2D" unique_id=1923527759]
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -1999.9993
-offset_top = -3090.9102
-offset_right = -1999.9993
-offset_bottom = -2143.9102
-grow_horizontal = 2
-offset_transform_enabled = true
-offset_transform_scale = Vector2(-1.06, 0.94)
-theme_override_font_sizes/normal_font_size = 695
-text = "Princess"
-fit_content = true
+[node name="princess" parent="." unique_id=1985838848 instance=ExtResource("3_y01qp")]
+position = Vector2(48, -164)
