@@ -5,8 +5,13 @@ var timer_activated : bool = false
 
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var timer: Timer = $Timer
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var chair: Sprite2D = $Chair
+@onready var head_sprite: Sprite2D = $head/HeadSprite
+@onready var right_side: Node2D = $RightSide
+@onready var left_side: Node2D = $LeftSide
 
+func _ready() -> void:
+	left_side.visible = false
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump") and standing:
@@ -33,10 +38,8 @@ func _physics_process(delta: float) -> void:
 	if standing:
 		if direction < 0:
 			flip_left()
-			sprite_2d.flip_h = true
 		elif direction > 0:
 			flip_right()
-			sprite_2d.flip_h = false
 		global_position = lerp(global_position,ray_cast_2d.get_collision_point() + Vector2(direction * 10, -10), 0.1)
 		rotation = lerp(rotation, 0.0, 0.1)
 		if ray_cast_2d.is_colliding() == false:
@@ -57,7 +60,13 @@ func enable_standing() -> void:
 	freeze = true
 
 func flip_left() -> void:
-	pass
+	chair.flip_h = true
+	head_sprite.flip_h = true
+	right_side.visible = false
+	left_side.visible = true
 
 func flip_right() -> void:
-	pass
+	chair.flip_h = false
+	head_sprite.flip_h = false
+	right_side.visible = true
+	left_side.visible = false
