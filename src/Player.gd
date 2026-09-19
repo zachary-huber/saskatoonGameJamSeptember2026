@@ -20,24 +20,33 @@ var velocity : float
 @onready var anchor: Node2D = $Anchor
 @onready var jump_direction_pivot: Marker2D = $Anchor/JumpDirectionPivot
 @onready var jump_direction: Marker2D = $Anchor/JumpDirectionPivot/JumpDirection
-@onready var jumpStrengthProgressBar:TextureProgressBar = $"jumpStrengthProgressBar"
+@export var jumpStrengthProgressBar:TextureProgressBar = null
 
 func _ready() -> void:
 	GameManager.player = self
 	left_side.visible = false
 
+func _process(delta: float) -> void:
+	var time_left = -timer.time_left + 2
+	if jumpStrengthProgressBar: jumpStrengthProgressBar.value = remap(time_left, 0.0, 2.0, 0.0, 100.0)
+
 func _input(event: InputEvent) -> void:
 	if setting_direction:
 		print(jump_direction.global_position)
-		
+	
+	# set correct direction
 	elif event.is_action_pressed("set direction") and standing:
 		print("setting direction")
 		setting_direction = true
 	
+	# begin charging jump
 	if event.is_action_pressed("jump") and standing:
 		timer_activated = true
 		timer.start(2)
+		# show jump indicator
+		if jumpStrengthProgressBar: jumpStrengthProgressBar.visible = true
 	
+	# release charging and actually jump
 	if event.is_action_released("jump") and timer_activated:
 		var time_left = -timer.time_left + 2
 		var changer : int
@@ -49,7 +58,10 @@ func _input(event: InputEvent) -> void:
 		disable_standing()
 		apply_impulse(direction)
 		timer_activated = false
+		# hide jump indicator
+		if jumpStrengthProgressBar: jumpStrengthProgressBar.visible = false
 	
+	# stand up if flopping around
 	if event.is_action_pressed("stand up"):
 		if standing:
 			disable_standing()

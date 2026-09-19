@@ -3,13 +3,12 @@
 [ext_resource type="Script" uid="uid://bxymdpn6xe6mi" path="res://src/Player.gd" id="1_agfs1"]
 [ext_resource type="Texture2D" uid="uid://br7t5h3htvxif" path="res://data/textures/knight/Game_jam_body2.png" id="2_a5ia6"]
 [ext_resource type="Texture2D" uid="uid://bhfs7hfai1tlj" path="res://data/textures/knight/Player-head.png" id="3_0dpix"]
+[ext_resource type="Texture2D" uid="uid://5spo53tbu7cn" path="res://data/textures/progressEmpty.png" id="3_my7n2"]
 [ext_resource type="Texture2D" uid="uid://bm4sue1acson4" path="res://data/textures/knight/game_jam_leg.png" id="4_2hyy3"]
+[ext_resource type="Texture2D" uid="uid://dou52cpi2s56r" path="res://data/textures/progressFilled.png" id="4_dp8ca"]
 [ext_resource type="Texture2D" uid="uid://ba7a3rchr686e" path="res://data/textures/knight/Game_jam_arm1.png" id="5_irmqu"]
 [ext_resource type="Texture2D" uid="uid://dokuv2hv36aro" path="res://data/textures/knight/Game_jam_arm2.png" id="6_7eonc"]
 [ext_resource type="Texture2D" uid="uid://v52n38hh1vy7" path="res://data/textures/knight/Game_jam_lance.png" id="7_50cep"]
-[ext_resource type="Texture2D" uid="uid://bkjpv0em6k5ke" path="res://data/textures/tiles_packed.png" id="2_rkhd4"]
-[ext_resource type="Texture2D" uid="uid://5spo53tbu7cn" path="res://data/textures/progressEmpty.png" id="3_my7n2"]
-[ext_resource type="Texture2D" uid="uid://dou52cpi2s56r" path="res://data/textures/progressFilled.png" id="4_dp8ca"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lrhn5"]
 radius = 15.0
@@ -41,8 +40,9 @@ radius = 18.248287
 
 [node name="Node2D" type="Node2D" unique_id=172420841]
 
-[node name="chair" type="RigidBody2D" parent="." unique_id=1036139043]
+[node name="chair" type="RigidBody2D" parent="." unique_id=1036139043 node_paths=PackedStringArray("jumpStrengthProgressBar")]
 script = ExtResource("1_agfs1")
+jumpStrengthProgressBar = NodePath("../remoteTarget/jumpStrengthProgressBar")
 
 [node name="CollisionShape3D" type="CollisionShape2D" parent="chair" unique_id=1570196423]
 shape = SubResource("CircleShape2D_lrhn5")
@@ -358,6 +358,7 @@ update_rotation = false
 [node name="remoteTarget" type="Node2D" parent="." unique_id=209385248]
 
 [node name="jumpStrengthProgressBar" type="TextureProgressBar" parent="remoteTarget" unique_id=930098547]
+visible = false
 z_index = 5
 material = SubResource("CanvasItemMaterial_wtm8x")
 offset_left = -26.0
