@@ -68,6 +68,7 @@ target_position = Vector2(18, 0)
 collision_mask = 2
 
 [node name="Timer" type="Timer" parent="chair" unique_id=34291027]
+one_shot = true
 
 [node name="Anchor" type="Node2D" parent="chair" unique_id=500528669]
 rotation = -1.2653637
@@ -354,6 +355,7 @@ shape = SubResource("CircleShape2D_wtm8x")
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="chair" unique_id=373250403]
 remote_path = NodePath("../../remoteTarget")
 update_rotation = false
+update_scale = false
 
 [node name="remoteTarget" type="Node2D" parent="." unique_id=209385248]
 

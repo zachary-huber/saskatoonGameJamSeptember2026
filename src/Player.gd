@@ -29,6 +29,10 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var time_left = -timer.time_left + 2
 	if jumpStrengthProgressBar: jumpStrengthProgressBar.value = remap(time_left, 0.0, 2.0, 0.0, 100.0)
+	#if timer_activated:
+		#self.scale.y = remap(time_left, 0.0, 2.0, 1.0, 0.5)
+	#else:
+		#self.scale.y = 1.0
 
 func _input(event: InputEvent) -> void:
 	if setting_direction:
