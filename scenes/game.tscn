@@ -11,4 +11,5 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2010805581]
 
 [node name="HUD" parent="CanvasLayer" unique_id=1919242333 instance=ExtResource("2_yqjtg")]
+visible = false
 script = ExtResource("3_lnu2h")

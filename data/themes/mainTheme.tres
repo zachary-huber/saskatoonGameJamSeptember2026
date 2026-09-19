@@ -2,27 +2,9 @@
 
 [ext_resource type="FontFile" uid="uid://damxh6xaoeh5r" path="res://data/fonts/Darinia.ttf" id="1_d1kgk"]
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_xh8q5"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_cg4gw"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_0jeyp"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_18exe"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_rd3kb"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_y5tme"]
-
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/icon_normal_color = Color(1, 1, 1, 1)
 Button/fonts/font = ExtResource("1_d1kgk")
-Button/styles/focus = SubResource("StyleBoxLine_xh8q5")
-Button/styles/hover = SubResource("StyleBoxLine_cg4gw")
-Button/styles/hover_mirrored = SubResource("StyleBoxLine_0jeyp")
-Button/styles/hover_pressed = SubResource("StyleBoxLine_18exe")
-Button/styles/normal = SubResource("StyleBoxLine_rd3kb")
-Button/styles/pressed = SubResource("StyleBoxLine_y5tme")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/fonts/normal_font = ExtResource("1_d1kgk")

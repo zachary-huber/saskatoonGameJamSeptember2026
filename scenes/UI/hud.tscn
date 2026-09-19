@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://d4hfgxt1op56d"]
 
 [ext_resource type="Theme" uid="uid://cltxyrhbu5idg" path="res://data/themes/mainTheme.tres" id="1_c4vmg"]
+[ext_resource type="Script" uid="uid://dexmvso4k2bsn" path="res://src/UI/hud.gd" id="2_rd3kb"]
+[ext_resource type="PackedScene" uid="uid://cna7gf6c7n2n1" path="res://scenes/UI/dev_button.tscn" id="3_18exe"]
+[ext_resource type="Script" uid="uid://8kmjuy56pruo" path="res://src/UI/devButton.gd" id="3_y5tme"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4vmg"]
+bg_color = Color(0.69411767, 0.039215688, 0.22352941, 1)
 
 [node name="HUD" type="Control" unique_id=1919242333]
 layout_mode = 3
@@ -10,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_c4vmg")
+script = ExtResource("2_rd3kb")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=797916515]
 layout_mode = 1
@@ -37,7 +44,7 @@ grow_vertical = 2
 [node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=581269730]
 layout_mode = 2
 size_flags_vertical = 3
-color = Color(0.9804091, 0.0008526844, 0.98964554, 1)
+color = Color(5.1018596e-06, 0.6111962, 0.6530462, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=976620247]
 layout_mode = 2
@@ -82,52 +89,76 @@ layout_mode = 2
 text = "Developer Tools"
 fit_content = true
 
-[node name="winGameButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=2090230223]
+[node name="devButton" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=287198253 instance=ExtResource("3_18exe")]
 layout_mode = 2
-size_flags_vertical = 3
-text = "Win Game"
 
-[node name="loseGameButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=861165335]
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=861165335]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Lose Game"
+text = "END RUN (LOSE)"
+script = ExtResource("3_y5tme")
+devCommand = 1
 
-[node name="toggleHud" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1536596198]
+[node name="Button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=2097258840]
 layout_mode = 2
 size_flags_vertical = 3
-text = "Toggle Hud"
+text = "restart run"
+script = ExtResource("3_y5tme")
+devCommand = 1
 
-[node name="button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=696777914]
+[node name="Button3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=844606314]
 layout_mode = 2
 size_flags_vertical = 3
-text = "x"
+text = "kill player"
+script = ExtResource("3_y5tme")
+devCommand = 3
 
-[node name="button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=897368604]
+[node name="Button4" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=452087865]
 layout_mode = 2
 size_flags_vertical = 3
-text = "x"
+text = "teleport (start)"
+script = ExtResource("3_y5tme")
+devCommand = 4
 
-[node name="button3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1928052617]
+[node name="Button5" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=174784662]
 layout_mode = 2
 size_flags_vertical = 3
-text = "x"
+text = "teleport (end)"
+script = ExtResource("3_y5tme")
+devCommand = 5
 
-[node name="button4" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1519059848]
+[node name="Button8" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1485355942]
 layout_mode = 2
 size_flags_vertical = 3
-text = "x"
+text = "main menu"
+script = ExtResource("3_y5tme")
+devCommand = 7
 
-[node name="button5" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1965966178]
+[node name="Button6" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1451582662]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
-text = "x"
+text = "low gravity"
+script = ExtResource("3_y5tme")
+devCommand = 6
 
-[node name="button6" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=780446669]
+[node name="Button7" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1026873590]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
-text = "x"
+text = "do nothing"
+script = ExtResource("3_y5tme")
+devCommand = 1
 
-[node name="button7" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1032375317]
+[node name="quitButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1032375317]
 layout_mode = 2
 size_flags_vertical = 3
-text = "x"
+theme_override_styles/normal = SubResource("StyleBoxFlat_c4vmg")
+text = "QUIT GAME"
+script = ExtResource("3_y5tme")
+devCommand = 6
+
+[node name="VSeparator2" type="VSeparator" parent="MarginContainer/HBoxContainer" unique_id=462424480]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.18

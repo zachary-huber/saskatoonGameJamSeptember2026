@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cna7gf6c7n2n1"]
+
+[ext_resource type="Script" uid="uid://8kmjuy56pruo" path="res://src/UI/devButton.gd" id="1_xfklm"]
+
+[node name="devButton" type="Button" unique_id=287198253]
+size_flags_vertical = 3
+text = "Dev Button"
+script = ExtResource("1_xfklm")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
