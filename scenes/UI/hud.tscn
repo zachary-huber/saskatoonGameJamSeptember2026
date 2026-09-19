@@ -23,7 +23,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1892950951]
+[node name="developerPanel" type="MarginContainer" parent="." unique_id=1892950951]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -37,94 +38,121 @@ offset_bottom = 200.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=581269730]
+[node name="ColorRect" type="ColorRect" parent="developerPanel" unique_id=581269730]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0, 0.6117647, 0.654902, 0.12156863)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=976620247]
+[node name="HBoxContainer" type="HBoxContainer" parent="developerPanel" unique_id=976620247]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2044634612]
+[node name="VBoxContainer" type="VBoxContainer" parent="developerPanel/HBoxContainer" unique_id=2044634612]
+visible = false
 custom_maximum_size = Vector2(500, 400)
 layout_mode = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1709741831]
+[node name="RichTextLabel" type="RichTextLabel" parent="developerPanel/HBoxContainer/VBoxContainer" unique_id=1709741831]
 layout_mode = 2
 size_flags_vertical = 3
 text = " Stats - Player run duration: 134.3 seconds"
 fit_content = true
 vertical_alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=941350247]
+[node name="RichTextLabel2" type="RichTextLabel" parent="developerPanel/HBoxContainer/VBoxContainer" unique_id=941350247]
 layout_mode = 2
 size_flags_vertical = 3
 text = " Stats - Player run duration: 134.3 seconds"
 fit_content = true
 vertical_alignment = 1
 
-[node name="RichTextLabel3" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=705958815]
+[node name="RichTextLabel3" type="RichTextLabel" parent="developerPanel/HBoxContainer/VBoxContainer" unique_id=705958815]
 layout_mode = 2
 size_flags_vertical = 3
 text = " Stats - Player run duration: 134.3 seconds"
 fit_content = true
 vertical_alignment = 1
 
-[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer" unique_id=1630934031]
+[node name="VSeparator" type="VSeparator" parent="developerPanel/HBoxContainer" unique_id=1630934031]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.18
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=95336472]
+[node name="VBoxContainer2" type="VBoxContainer" parent="developerPanel/HBoxContainer" unique_id=95336472]
 custom_maximum_size = Vector2(500, 400)
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=297999384]
+[node name="RichTextLabel" type="RichTextLabel" parent="developerPanel/HBoxContainer/VBoxContainer2" unique_id=297999384]
 layout_mode = 2
 text = "Developer Tools"
 fit_content = true
 
-[node name="devButton" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=287198253 instance=ExtResource("3_18exe")]
-layout_mode = 2
-text = "Win Game"
-
-[node name="devButton2" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1610843552 instance=ExtResource("3_18exe")]
-layout_mode = 2
-text = "End Run"
-devCommand = 1
-
-[node name="devButton3" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1483611480 instance=ExtResource("3_18exe")]
-layout_mode = 2
-text = "restart run"
-devCommand = 2
-
-[node name="devButton4" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1491341581 instance=ExtResource("3_18exe")]
-layout_mode = 2
-text = "kill player"
-devCommand = 3
-
-[node name="devButton5" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=926489865 instance=ExtResource("3_18exe")]
-layout_mode = 2
-text = "teleport start"
-devCommand = 4
-
-[node name="devButton6" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=183699738 instance=ExtResource("3_18exe")]
-layout_mode = 2
-text = "teleport end"
-devCommand = 5
-
-[node name="devButton7" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1234564296 instance=ExtResource("3_18exe")]
-layout_mode = 2
-text = "quit game"
-devCommand = 6
-
-[node name="devButton8" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=784740242 instance=ExtResource("3_18exe")]
+[node name="devButton8" parent="developerPanel/HBoxContainer/VBoxContainer2" unique_id=784740242 instance=ExtResource("3_18exe")]
 layout_mode = 2
 text = "main menu"
 devCommand = 7
 
-[node name="VSeparator2" type="VSeparator" parent="MarginContainer/HBoxContainer" unique_id=462424480]
+[node name="devButton3" parent="developerPanel/HBoxContainer/VBoxContainer2" unique_id=1483611480 instance=ExtResource("3_18exe")]
+layout_mode = 2
+text = "restart run"
+devCommand = 2
+
+[node name="devButton7" parent="developerPanel/HBoxContainer/VBoxContainer2" unique_id=1234564296 instance=ExtResource("3_18exe")]
+layout_mode = 2
+text = "quit game"
+devCommand = 6
+
+[node name="devButton" parent="developerPanel/HBoxContainer/VBoxContainer2" unique_id=287198253 instance=ExtResource("3_18exe")]
+visible = false
+layout_mode = 2
+text = "Win Game"
+
+[node name="devButton9" parent="developerPanel/HBoxContainer/VBoxContainer2" unique_id=1898307175 instance=ExtResource("3_18exe")]
+layout_mode = 2
+text = "Visit Princess"
+devCommand = 9
+
+[node name="devButton2" parent="developerPanel/HBoxContainer/VBoxContainer2" unique_id=1610843552 instance=ExtResource("3_18exe")]
+visible = false
+layout_mode = 2
+text = "End Run"
+devCommand = 1
+
+[node name="devButton4" parent="developerPanel/HBoxContainer/VBoxContainer2" unique_id=1491341581 instance=ExtResource("3_18exe")]
+layout_mode = 2
+text = "kill player"
+devCommand = 3
+
+[node name="devButton5" parent="developerPanel/HBoxContainer/VBoxContainer2" unique_id=926489865 instance=ExtResource("3_18exe")]
+layout_mode = 2
+text = "teleport start"
+devCommand = 4
+
+[node name="devButton10" parent="developerPanel/HBoxContainer/VBoxContainer2" unique_id=177461806 instance=ExtResource("3_18exe")]
+layout_mode = 2
+text = "See Credits"
+devCommand = 4
+
+[node name="devButton11" parent="developerPanel/HBoxContainer/VBoxContainer2" unique_id=1266268649 instance=ExtResource("3_18exe")]
+layout_mode = 2
+text = "Spawn Dragon"
+devCommand = 4
+
+[node name="devButton6" parent="developerPanel/HBoxContainer/VBoxContainer2" unique_id=183699738 instance=ExtResource("3_18exe")]
+visible = false
+layout_mode = 2
+text = "teleport end"
+devCommand = 5
+
+[node name="VSeparator2" type="VSeparator" parent="developerPanel/HBoxContainer" unique_id=462424480]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.18
+
+[node name="stopwatchTimeLabel" type="RichTextLabel" parent="." unique_id=120518899]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 10.0
+offset_right = 1045.0
+offset_bottom = 50.0
+text = "TIMER: 0.0"

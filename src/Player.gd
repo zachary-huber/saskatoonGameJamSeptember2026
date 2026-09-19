@@ -20,8 +20,10 @@ var velocity : float
 @onready var anchor: Node2D = $Anchor
 @onready var jump_direction_pivot: Marker2D = $Anchor/JumpDirectionPivot
 @onready var jump_direction: Marker2D = $Anchor/JumpDirectionPivot/JumpDirection
+@onready var jumpStrengthProgressBar:TextureProgressBar = $"jumpStrengthProgressBar"
 
 func _ready() -> void:
+	GameManager.player = self
 	left_side.visible = false
 
 func _input(event: InputEvent) -> void:

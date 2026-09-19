@@ -35,7 +35,7 @@ scale = Vector2(55.555557, -90.909096)
 position = Vector2(8.455462e-15, -0.59500027)
 shape = SubResource("RectangleShape2D_rai6k")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="sprite2D" unique_id=1510807740]
+[node name="nameTag" type="RichTextLabel" parent="sprite2D" unique_id=1510807740]
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = -1999.9993
@@ -47,6 +47,21 @@ offset_transform_enabled = true
 offset_transform_scale = Vector2(-1.06, 0.94)
 theme_override_font_sizes/normal_font_size = 695
 text = "Princess"
+fit_content = true
+
+[node name="winText" type="RichTextLabel" parent="sprite2D" unique_id=810659059]
+visible = false
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = -3111.1116
+offset_top = -4454.5444
+offset_right = -2550.5757
+offset_bottom = -2560.5444
+grow_horizontal = 2
+offset_transform_enabled = true
+offset_transform_scale = Vector2(-1.06, 0.94)
+theme_override_font_sizes/normal_font_size = 695
+text = "you WIN!!!"
 fit_content = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1392586970]

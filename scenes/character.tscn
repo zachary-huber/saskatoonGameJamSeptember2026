@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://ba7a3rchr686e" path="res://data/textures/knight/Game_jam_arm1.png" id="5_irmqu"]
 [ext_resource type="Texture2D" uid="uid://dokuv2hv36aro" path="res://data/textures/knight/Game_jam_arm2.png" id="6_7eonc"]
 [ext_resource type="Texture2D" uid="uid://v52n38hh1vy7" path="res://data/textures/knight/Game_jam_lance.png" id="7_50cep"]
+[ext_resource type="Texture2D" uid="uid://bkjpv0em6k5ke" path="res://data/textures/tiles_packed.png" id="2_rkhd4"]
+[ext_resource type="Texture2D" uid="uid://5spo53tbu7cn" path="res://data/textures/progressEmpty.png" id="3_my7n2"]
+[ext_resource type="Texture2D" uid="uid://dou52cpi2s56r" path="res://data/textures/progressFilled.png" id="4_dp8ca"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lrhn5"]
 radius = 15.0
@@ -33,6 +36,8 @@ size = Vector2(8, 31)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wtm8x"]
 radius = 18.248287
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_wtm8x"]
 
 [node name="Node2D" type="Node2D" unique_id=172420841]
 
@@ -346,7 +351,22 @@ angular_limit_upper = 0.6981317
 position = Vector2(0, -7.67)
 shape = SubResource("CircleShape2D_wtm8x")
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=12740159]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="chair" unique_id=373250403]
+remote_path = NodePath("../../remoteTarget")
+update_rotation = false
+
+[node name="remoteTarget" type="Node2D" parent="." unique_id=209385248]
+
+[node name="jumpStrengthProgressBar" type="TextureProgressBar" parent="remoteTarget" unique_id=930098547]
+z_index = 5
+material = SubResource("CanvasItemMaterial_wtm8x")
+offset_left = -26.0
+offset_top = -33.0
+offset_right = 374.0
+offset_bottom = 367.0
+scale = Vector2(0.129, 0.129)
+value = 86.0
 fill_mode = 4
+texture_under = ExtResource("3_my7n2")
+texture_progress = ExtResource("4_dp8ca")
+tint_under = Color(1, 1, 1, 0.06666667)

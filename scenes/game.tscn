@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://ddj6q6kgkvkck" path="res://scenes/levelParts/level.tscn" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://d4hfgxt1op56d" path="res://scenes/UI/hud.tscn" id="2_yqjtg"]
-[ext_resource type="Script" uid="uid://dexmvso4k2bsn" path="res://src/UI/hud.gd" id="3_lnu2h"]
 
 [node name="Game" type="Node" unique_id=1457452227]
 
@@ -11,5 +10,3 @@
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2010805581]
 
 [node name="HUD" parent="CanvasLayer" unique_id=1919242333 instance=ExtResource("2_yqjtg")]
-visible = false
-script = ExtResource("3_lnu2h")
