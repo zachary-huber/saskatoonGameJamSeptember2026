@@ -1,0 +1,154 @@
+[gd_scene format=3 uid="uid://d4hfgxt1op56d"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_xh8q5"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_cg4gw"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0jeyp"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_18exe"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rd3kb"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_y5tme"]
+
+[sub_resource type="Theme" id="Theme_8jrks"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/styles/focus = SubResource("StyleBoxLine_xh8q5")
+Button/styles/hover = SubResource("StyleBoxLine_cg4gw")
+Button/styles/hover_mirrored = SubResource("StyleBoxLine_0jeyp")
+Button/styles/hover_pressed = SubResource("StyleBoxLine_18exe")
+Button/styles/normal = SubResource("StyleBoxLine_rd3kb")
+Button/styles/pressed = SubResource("StyleBoxLine_y5tme")
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="Control" unique_id=1919242333]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_8jrks")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=797916515]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1892950951]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=581269730]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.9804091, 0.0008526844, 0.98964554, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=976620247]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2044634612]
+custom_maximum_size = Vector2(500, 400)
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1709741831]
+layout_mode = 2
+size_flags_vertical = 3
+text = " Stats - Player run duration: 134.3 seconds"
+fit_content = true
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=941350247]
+layout_mode = 2
+size_flags_vertical = 3
+text = " Stats - Player run duration: 134.3 seconds"
+fit_content = true
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=705958815]
+layout_mode = 2
+size_flags_vertical = 3
+text = " Stats - Player run duration: 134.3 seconds"
+fit_content = true
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer" unique_id=1630934031]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.18
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=95336472]
+custom_maximum_size = Vector2(500, 400)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=297999384]
+layout_mode = 2
+text = "Developer Tools"
+fit_content = true
+
+[node name="winGameButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=2090230223]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Win Game"
+
+[node name="loseGameButton" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=861165335]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Lose Game"
+
+[node name="toggleHud" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1536596198]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Toggle Hud"
+
+[node name="button" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=696777914]
+layout_mode = 2
+size_flags_vertical = 3
+text = "x"
+
+[node name="button2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=897368604]
+layout_mode = 2
+size_flags_vertical = 3
+text = "x"
+
+[node name="button3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1928052617]
+layout_mode = 2
+size_flags_vertical = 3
+text = "x"
+
+[node name="button4" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1519059848]
+layout_mode = 2
+size_flags_vertical = 3
+text = "x"
+
+[node name="button5" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1965966178]
+layout_mode = 2
+size_flags_vertical = 3
+text = "x"
+
+[node name="button6" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=780446669]
+layout_mode = 2
+size_flags_vertical = 3
+text = "x"
+
+[node name="button7" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=1032375317]
+layout_mode = 2
+size_flags_vertical = 3
+text = "x"
