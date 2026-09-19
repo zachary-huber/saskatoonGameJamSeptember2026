@@ -5,11 +5,11 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lrhn5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(12, 5)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(12, 5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(20, 4)
@@ -19,139 +19,238 @@ size = Vector2(6, 18)
 
 [node name="Node2D" type="Node2D" unique_id=172420841]
 
-[node name="chest" type="RigidBody2D" parent="." unique_id=1036139043]
+[node name="chair" type="RigidBody2D" parent="." unique_id=1036139043]
 script = ExtResource("1_agfs1")
 
-[node name="CollisionShape3D" type="CollisionShape2D" parent="chest" unique_id=1570196423]
+[node name="CollisionShape3D" type="CollisionShape2D" parent="chair" unique_id=1570196423]
 shape = SubResource("CircleShape2D_lrhn5")
 
-[node name="Sprite2D" type="Sprite2D" parent="chest" unique_id=330801222]
+[node name="Chair" type="Sprite2D" parent="chair" unique_id=330801222]
 texture = ExtResource("2_rkhd4")
 region_enabled = true
 region_rect = Rect2(162, 18, 18, 18)
 
-[node name="Camera2D" type="Camera2D" parent="chest" unique_id=1230208513]
+[node name="Camera2D" type="Camera2D" parent="chair" unique_id=1230208513]
 zoom = Vector2(1.705, 1.705)
 
-[node name="RayCast2D" type="RayCast2D" parent="chest" unique_id=1011756398]
+[node name="RayCast2D" type="RayCast2D" parent="chair" unique_id=1011756398]
 target_position = Vector2(0, 23.815)
 collision_mask = 2
 
-[node name="Timer" type="Timer" parent="chest" unique_id=34291027]
+[node name="Timer" type="Timer" parent="chair" unique_id=34291027]
 
-[node name="BodyParts" type="Node2D" parent="chest" unique_id=1418595747]
-
-[node name="leg1" type="RigidBody2D" parent="chest/BodyParts" unique_id=24914464]
-position = Vector2(10, -3)
-collision_layer = 0
-collision_mask = 0
-mass = 0.001
-
-[node name="Sprite2D" type="Sprite2D" parent="chest/BodyParts/leg1" unique_id=560784739]
-position = Vector2(9, 8)
-texture = ExtResource("2_rkhd4")
-region_enabled = true
-region_rect = Rect2(342, 90, 18, 18)
-
-[node name="PinJoint2D" type="PinJoint2D" parent="chest/BodyParts/leg1" unique_id=1584458527]
-node_a = NodePath("../../..")
-node_b = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chest/BodyParts/leg1" unique_id=1864600458]
-position = Vector2(12, 3.5)
-shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="leg2" type="RigidBody2D" parent="chest/BodyParts" unique_id=618469843]
-position = Vector2(10, -8)
-collision_layer = 0
-collision_mask = 0
-mass = 0.001
-
-[node name="Sprite2D" type="Sprite2D" parent="chest/BodyParts/leg2" unique_id=832143394]
-position = Vector2(9, 8)
-texture = ExtResource("2_rkhd4")
-region_enabled = true
-region_rect = Rect2(342, 90, 18, 18)
-
-[node name="PinJoint2D" type="PinJoint2D" parent="chest/BodyParts/leg2" unique_id=1087923582]
-node_a = NodePath("../../..")
-node_b = NodePath("..")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chest/BodyParts/leg2" unique_id=1038663385]
-position = Vector2(12, 3.5)
-shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="head" type="RigidBody2D" parent="chest/BodyParts" unique_id=1748865751]
+[node name="head" type="RigidBody2D" parent="chair" unique_id=1748865751]
 position = Vector2(0, -16)
 collision_layer = 0
 collision_mask = 0
 mass = 0.001
 
-[node name="Sprite2D" type="Sprite2D" parent="chest/BodyParts/head" unique_id=1274954987]
+[node name="HeadSprite" type="Sprite2D" parent="chair/head" unique_id=1274954987]
 texture = ExtResource("2_rkhd4")
 region_enabled = true
 region_rect = Rect2(198, 126, 18, 18)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chest/BodyParts/head" unique_id=1462360551]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chair/head" unique_id=1462360551]
 shape = SubResource("CircleShape2D_g4v7s")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="chest/BodyParts/head" unique_id=817435758]
+[node name="PinJoint2D" type="PinJoint2D" parent="chair/head" unique_id=817435758]
+node_a = NodePath("../..")
+node_b = NodePath("..")
+
+[node name="RightSide" type="Node2D" parent="chair" unique_id=1418595747]
+
+[node name="leg1" type="RigidBody2D" parent="chair/RightSide" unique_id=24914464]
+position = Vector2(10, -3)
+collision_layer = 0
+collision_mask = 0
+mass = 0.001
+
+[node name="Sprite2D" type="Sprite2D" parent="chair/RightSide/leg1" unique_id=560784739]
+position = Vector2(9, 8)
+texture = ExtResource("2_rkhd4")
+region_enabled = true
+region_rect = Rect2(342, 90, 18, 18)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="chair/RightSide/leg1" unique_id=1584458527]
 node_a = NodePath("../../..")
 node_b = NodePath("..")
 
-[node name="forearm" type="RigidBody2D" parent="chest/BodyParts" unique_id=2136513355]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chair/RightSide/leg1" unique_id=1864600458]
+position = Vector2(12, 3.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="leg2" type="RigidBody2D" parent="chair/RightSide" unique_id=618469843]
+position = Vector2(10, -8)
+collision_layer = 0
+collision_mask = 0
+mass = 0.001
+
+[node name="Sprite2D" type="Sprite2D" parent="chair/RightSide/leg2" unique_id=832143394]
+position = Vector2(9, 8)
+texture = ExtResource("2_rkhd4")
+region_enabled = true
+region_rect = Rect2(342, 90, 18, 18)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="chair/RightSide/leg2" unique_id=1087923582]
+node_a = NodePath("../../..")
+node_b = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chair/RightSide/leg2" unique_id=1038663385]
+position = Vector2(12, 3.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="forearm" type="RigidBody2D" parent="chair/RightSide" unique_id=2136513355]
 position = Vector2(9, -10)
 collision_layer = 0
 collision_mask = 0
 mass = 0.001
 
-[node name="Sprite2D" type="Sprite2D" parent="chest/BodyParts/forearm" unique_id=2013781756]
+[node name="Sprite2D" type="Sprite2D" parent="chair/RightSide/forearm" unique_id=2013781756]
 texture = ExtResource("2_rkhd4")
 region_enabled = true
 region_rect = Rect2(198, 72, 18, 18)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chest/BodyParts/forearm" unique_id=1593489325]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chair/RightSide/forearm" unique_id=1593489325]
 shape = SubResource("RectangleShape2D_yf5fn")
 
-[node name="PinJoint2D2" type="PinJoint2D" parent="chest/BodyParts/forearm" unique_id=1565645823]
+[node name="PinJoint2D2" type="PinJoint2D" parent="chair/RightSide/forearm" unique_id=1565645823]
 position = Vector2(-9, 0)
 node_a = NodePath("../../..")
 node_b = NodePath("..")
 
-[node name="arm" type="RigidBody2D" parent="chest/BodyParts" unique_id=1718743685]
+[node name="arm" type="RigidBody2D" parent="chair/RightSide" unique_id=1718743685]
 position = Vector2(29, -10)
 collision_layer = 0
 collision_mask = 0
 mass = 0.001
 
-[node name="Sprite2D" type="Sprite2D" parent="chest/BodyParts/arm" unique_id=288629230]
+[node name="Sprite2D" type="Sprite2D" parent="chair/RightSide/arm" unique_id=288629230]
 texture = ExtResource("2_rkhd4")
 region_enabled = true
 region_rect = Rect2(198, 72, 18, 18)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chest/BodyParts/arm" unique_id=182823891]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chair/RightSide/arm" unique_id=182823891]
 shape = SubResource("RectangleShape2D_yf5fn")
 
-[node name="PinJoint2D2" type="PinJoint2D" parent="chest/BodyParts/arm" unique_id=1474871932]
+[node name="PinJoint2D2" type="PinJoint2D" parent="chair/RightSide/arm" unique_id=1474871932]
 position = Vector2(-10, 0)
 node_a = NodePath("../../forearm")
 node_b = NodePath("..")
 
-[node name="pole" type="RigidBody2D" parent="chest/BodyParts" unique_id=1538412937]
+[node name="pole" type="RigidBody2D" parent="chair/RightSide" unique_id=1538412937]
 position = Vector2(39, -2)
 collision_layer = 0
 collision_mask = 0
 mass = 0.001
 
-[node name="Sprite2D" type="Sprite2D" parent="chest/BodyParts/pole" unique_id=1147433205]
+[node name="Sprite2D" type="Sprite2D" parent="chair/RightSide/pole" unique_id=1147433205]
 texture = ExtResource("2_rkhd4")
 region_enabled = true
 region_rect = Rect2(162, 90, 18, 18)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chest/BodyParts/pole" unique_id=1105183897]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chair/RightSide/pole" unique_id=1105183897]
 shape = SubResource("RectangleShape2D_rkhd4")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="chest/BodyParts/pole" unique_id=472962506]
+[node name="PinJoint2D" type="PinJoint2D" parent="chair/RightSide/pole" unique_id=472962506]
+position = Vector2(0, -8)
+node_a = NodePath("../../arm")
+node_b = NodePath("..")
+
+[node name="LeftSide" type="Node2D" parent="chair" unique_id=1020212221]
+
+[node name="leg1" type="RigidBody2D" parent="chair/LeftSide" unique_id=296460697]
+position = Vector2(-10, -3)
+collision_layer = 0
+collision_mask = 0
+mass = 0.001
+
+[node name="Sprite2D" type="Sprite2D" parent="chair/LeftSide/leg1" unique_id=682900885]
+position = Vector2(-9, 8)
+texture = ExtResource("2_rkhd4")
+region_enabled = true
+region_rect = Rect2(342, 90, 18, 18)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="chair/LeftSide/leg1" unique_id=1880183454]
+node_a = NodePath("../../..")
+node_b = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chair/LeftSide/leg1" unique_id=1084931336]
+position = Vector2(-12, 3.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="leg2" type="RigidBody2D" parent="chair/LeftSide" unique_id=1557318631]
+position = Vector2(-10, -8)
+collision_layer = 0
+collision_mask = 0
+mass = 0.001
+
+[node name="Sprite2D" type="Sprite2D" parent="chair/LeftSide/leg2" unique_id=1797354162]
+position = Vector2(-9, 8)
+texture = ExtResource("2_rkhd4")
+region_enabled = true
+region_rect = Rect2(342, 90, 18, 18)
+
+[node name="PinJoint2D" type="PinJoint2D" parent="chair/LeftSide/leg2" unique_id=1264071037]
+node_a = NodePath("../../..")
+node_b = NodePath("..")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chair/LeftSide/leg2" unique_id=2049758888]
+position = Vector2(-12, 3.5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="forearm" type="RigidBody2D" parent="chair/LeftSide" unique_id=1677111014]
+position = Vector2(-9, -10)
+collision_layer = 0
+collision_mask = 0
+mass = 0.001
+
+[node name="Sprite2D" type="Sprite2D" parent="chair/LeftSide/forearm" unique_id=1524216793]
+texture = ExtResource("2_rkhd4")
+region_enabled = true
+region_rect = Rect2(198, 72, 18, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chair/LeftSide/forearm" unique_id=1012919916]
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="chair/LeftSide/forearm" unique_id=37064401]
+position = Vector2(9, 0)
+node_a = NodePath("../../..")
+node_b = NodePath("..")
+
+[node name="arm" type="RigidBody2D" parent="chair/LeftSide" unique_id=1255744075]
+position = Vector2(-29, -10)
+collision_layer = 0
+collision_mask = 0
+mass = 0.001
+
+[node name="Sprite2D" type="Sprite2D" parent="chair/LeftSide/arm" unique_id=1445423849]
+texture = ExtResource("2_rkhd4")
+region_enabled = true
+region_rect = Rect2(198, 72, 18, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chair/LeftSide/arm" unique_id=42386941]
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="PinJoint2D2" type="PinJoint2D" parent="chair/LeftSide/arm" unique_id=706122717]
+position = Vector2(10, 0)
+node_a = NodePath("../../forearm")
+node_b = NodePath("..")
+
+[node name="pole" type="RigidBody2D" parent="chair/LeftSide" unique_id=479020893]
+position = Vector2(-39, -2)
+collision_layer = 0
+collision_mask = 0
+mass = 0.001
+
+[node name="Sprite2D" type="Sprite2D" parent="chair/LeftSide/pole" unique_id=418408753]
+texture = ExtResource("2_rkhd4")
+region_enabled = true
+region_rect = Rect2(162, 90, 18, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chair/LeftSide/pole" unique_id=1289187246]
+shape = SubResource("RectangleShape2D_rkhd4")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="chair/LeftSide/pole" unique_id=283563607]
 position = Vector2(0, -8)
 node_a = NodePath("../../arm")
 node_b = NodePath("..")
