@@ -24,6 +24,7 @@ grow_vertical = 2
 color = Color(1, 1, 1, 0)
 
 [node name="developerPanel" type="MarginContainer" parent="." unique_id=1892950951]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

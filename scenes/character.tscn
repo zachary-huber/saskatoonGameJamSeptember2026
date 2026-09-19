@@ -268,7 +268,14 @@ node_b = NodePath("..")
 position = Vector2(0, -7.67)
 shape = SubResource("CircleShape2D_wtm8x")
 
-[node name="jumpStrengthProgressBar" type="TextureProgressBar" parent="chair" unique_id=930098547]
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="chair" unique_id=373250403]
+remote_path = NodePath("../../remoteTarget")
+update_rotation = false
+
+[node name="remoteTarget" type="Node2D" parent="." unique_id=209385248]
+
+[node name="jumpStrengthProgressBar" type="TextureProgressBar" parent="remoteTarget" unique_id=930098547]
+z_index = 5
 material = SubResource("CanvasItemMaterial_wtm8x")
 offset_left = -26.0
 offset_top = -33.0
