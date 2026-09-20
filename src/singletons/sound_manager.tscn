@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://d2ethl0rqj3kn"]
+
+[ext_resource type="Script" uid="uid://ds8j7m4bns8ov" path="res://src/singletons/sound_manager.gd" id="1_0ufuj"]
+[ext_resource type="AudioStream" uid="uid://brfvpr4r43lcm" path="res://data/sounds/jadeSounds/floraphonic-coin-and-money-bag-2-185263.mp3" id="2_0ihoa"]
+[ext_resource type="AudioStream" uid="uid://c6jkq64tdamcy" path="res://data/sounds/jadeSounds/freesound_community-cartoon-jump-6462.mp3" id="3_r2gt8"]
+[ext_resource type="AudioStream" uid="uid://bnthgg1yqe04r" path="res://data/sounds/jadeSounds/universfield-victory-fanfare-152480.mp3" id="4_50a4s"]
+[ext_resource type="AudioStream" uid="uid://b6hjyajab41x2" path="res://data/sounds/jadeSounds/u_xjrmmgxfru-flesh-impact-266316.mp3" id="5_ylrr8"]
+[ext_resource type="AudioStream" uid="uid://bm5ay06bms0kd" path="res://data/sounds/jadeSounds/dragon-studio-fire-crackling-sounds-427410.mp3" id="6_76706"]
+[ext_resource type="AudioStream" uid="uid://c1hi5w63esui7" path="res://data/sounds/jadeSounds/dragon-studio-winter-wind-402331.mp3" id="7_q3sgq"]
+[ext_resource type="AudioStream" uid="uid://ct06heysouadi" path="res://data/sounds/jadeSounds/freesound_community-videogame-death-sound-43894.mp3" id="8_3iqp8"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_yf5fn"]
+random_pitch = 1.0956218
+streams_count = 1
+stream_0/stream = ExtResource("2_0ihoa")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g4v7s"]
+random_pitch = 1.1315758
+streams_count = 1
+stream_0/stream = ExtResource("3_r2gt8")
+
+[node name="SoundManager" type="Node" unique_id=1851543905]
+script = ExtResource("1_0ufuj")
+
+[node name="collect" type="AudioStreamPlayer" parent="." unique_id=2043572071]
+stream = SubResource("AudioStreamRandomizer_yf5fn")
+volume_db = -11.719
+
+[node name="jump" type="AudioStreamPlayer" parent="." unique_id=1953264950]
+stream = SubResource("AudioStreamRandomizer_g4v7s")
+volume_db = -9.521
+
+[node name="Win" type="AudioStreamPlayer" parent="." unique_id=1926522292]
+stream = ExtResource("4_50a4s")
+
+[node name="spike" type="AudioStreamPlayer" parent="." unique_id=1008973027]
+stream = ExtResource("5_ylrr8")
+
+[node name="indoor" type="AudioStreamPlayer" parent="." unique_id=1618926686]
+stream = ExtResource("6_76706")
+volume_db = -29.88
+parameters/looping = true
+
+[node name="wind" type="AudioStreamPlayer" parent="." unique_id=266578510]
+stream = ExtResource("7_q3sgq")
+volume_db = -29.492
+parameters/looping = true
+
+[node name="death" type="AudioStreamPlayer" parent="." unique_id=1582119986]
+stream = ExtResource("8_3iqp8")

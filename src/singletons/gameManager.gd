@@ -55,6 +55,7 @@ func endRun() -> void:
 
 # Ends the current run session with a WIN status
 func winGame() -> void:
+	SoundManager.win.play()
 	princess.interactPrincess()
 	endRun()
 
@@ -79,7 +80,8 @@ func setRunEndTimeTicks() -> void:
 # Make player die and probably end the run.
 func killPlayer() -> void:
 	print("we died")
-	await get_tree().create_timer(1.0).timeout
+	SoundManager.spike.play()
+	
 	currentCollectibles = 0
 	get_tree().change_scene_to_file("res://scenes/UI/gameOverScreen.tscn")
 

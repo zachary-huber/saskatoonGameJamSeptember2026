@@ -109,6 +109,7 @@ func _input(event: InputEvent) -> void:
 			var direction = Vector2(h_jump_dist * changer, -v_jump_dist) * time_left
 			for i in sprite_array:
 				i.scale.y = 1.0
+				SoundManager.jump.play()
 			disable_standing()
 			apply_impulse(direction)
 			timer_activated = false
@@ -198,5 +199,6 @@ func _on_interact_area_area_entered(area: Area2D) -> void:
 		var collectible = area.get_parent()
 		print("collided with collectible: ", collectible.name)
 		GameManager.collect(collectible)
+		SoundManager.collect.play()
 		collectible.queue_free()
 		print("deleted collectible: ", collectible.name)

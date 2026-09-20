@@ -14,3 +14,13 @@ func _process(delta: float) -> void:
 	if camera_x_inc != floor(cam_grid_loc.x / 1280) or camera_y_inc != floor(cam_grid_loc.y / 720) :
 		cam_grid_loc = Vector2((camera_x_inc * 1280) + 1280 - 640,(camera_y_inc * 720) + 720 - 360)
 		position = cam_grid_loc
+
+		if camera_x_inc == 0 or (camera_x_inc == 2 and camera_y_inc == -3):
+			SoundManager.wind.play()
+			if SoundManager.indoor.playing:
+				SoundManager.indoor.playing = false
+		else: 
+			SoundManager.indoor.play()
+			if SoundManager.wind.playing:
+				SoundManager.wind.playing = false
+	
