@@ -19,8 +19,9 @@ func _ready() -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("escape"):
-		if gameHUD: gameHUD.toggleHUD()
+	pass
+	#if event.is_action_pressed("escape"):
+		#if gameHUD: gameHUD.toggleHUD()
 
 # Load and show the main menu scene
 func seeMainMenu() -> void:
