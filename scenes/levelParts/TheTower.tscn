@@ -897,8 +897,8 @@ tile_set = SubResource("TileSet_g4v7s")
 tile_map_data = PackedByteArray("AAAhAfz/AAAAAAIAAAAiAfz/AAADAAIAAAAjAfz/AAACAAIAAAAkAfz/AAACAAIAAAAlAfz/AAAGAAIAAAAmAfz/AAACAAIAAAAnAfz/AAAAAAIAAAAoAfz/AAABAAIAAAApAfz/AAAFAAIAAAAqAfz/AAAGAAIAAAArAfz/AAADAAIAAAAsAfz/AAAAAAIAAAAtAfz/AAAAAAIAAAAuAfz/AAADAAIAAAAvAfz/AAAFAAIAAAAxAfz/AAACAAIAAAAyAfz/AAAEAAIAAAAzAfz/AAAAAAIAAAA0Afz/AAAAAAIAAAA4Afz/AAAFAAIAAAA6Afz/AAACAAIAAAA7Afz/AAABAAIAAAA8Afz/AAAEAAIAAAA9Afz/AAAAAAIAAAA+Afz/AAABAAIAAAA/Afz/AAAGAAIAAAA5Afz/AAAGAAIAAAA3Afz/AAAGAAIAAAA2Afz/AAAGAAIAAAA1Afz/AAACAAIAAAAwAfz/AAACAAIAAAAgAfz/AAADAAIAAAA=")
 tile_set = SubResource("TileSet_8n0vm")
 
-[node name="Node2D" parent="." unique_id=172420841 instance=ExtResource("3_4qykj")]
-position = Vector2(1056, -1824)
+[node name="player" parent="." unique_id=172420841 instance=ExtResource("3_4qykj")]
+position = Vector2(140, -603)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=379449107]
 visible = false
