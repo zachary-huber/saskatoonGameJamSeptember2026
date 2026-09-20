@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cltxyrhbu5idg" path="res://data/themes/mainTheme.tres" id="1_g3j2f"]
 [ext_resource type="Texture2D" uid="uid://bb8juqvdhqqm7" path="res://data/textures/Game_jam_game_over.png" id="2_jq8gn"]
+[ext_resource type="Script" uid="uid://drqpsygut7pql" path="res://src/UI/credits.gd" id="2_nioxy"]
 [ext_resource type="PackedScene" uid="uid://cna7gf6c7n2n1" path="res://scenes/UI/dev_button.tscn" id="3_nioxy"]
 [ext_resource type="Texture2D" uid="uid://bg878iex5a5ic" path="res://data/textures/Game_jam_game_over_YES2.png" id="4_q4wsr"]
 [ext_resource type="Texture2D" uid="uid://k04wqyc8uidp" path="res://data/textures/Game_jam_game_over_NO2.png" id="5_83fsw"]
@@ -22,6 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_g3j2f")
+script = ExtResource("2_nioxy")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=292724763]
 layout_mode = 1
@@ -100,21 +102,33 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/normal_font_size = 17
 text = "Collaborators
 
-Zac Huber -- Xander Boutin  -- Jade --Jackson
+Zac Huber -- Xander Boutin  -- Jade H -- Jackson L. Davis
 
 
 SOUNDS USED
 
-Horse-neigh	https://pixabay.com/sound-effects/nature-horse-neigh-515279/			
-Horse Winnies	Sdanezis https://pixabay.com/sound-effects/film-special-effects-horse-whinnies-amp-snorts-sfx-278668/			
-Horse neigh	ShadoWisp https://pixabay.com/sound-effects/nature-horse-neigh-shortened-84724/			
-Cartoon jump	Bastianhallo https://pixabay.com/sound-effects/film-special-effects-cartoon-jump-6462/			
-Metal squeak	rdneubauer https://pixabay.com/sound-effects/household-metal-squeak-2-91858/			
-Flesh impact	u_xjrmmgxfru https://pixabay.com/sound-effects/film-special-effects-flesh-impact-266316/			
-Dragon roar2	DRAGON-STUDIO https://pixabay.com/sound-effects/film-special-effects-dragon-roar-2-364479/			
-Charge up	cribbler https://pixabay.com/sound-effects/film-special-effects-magic-chargeup-102051/			
-Treasure	floraphonic https://pixabay.com/sound-effects/film-special-effects-coin-and-money-bag-2-185263/			
-Death Fupicat 	https://pixabay.com/sound-effects/film-special-effects-videogame-death-sound-43894/			
+SOUNDS	CREDIT	WEBSITE		
+Horse-neigh	DRAGON-STUDIO	https://pixabay.com/sound-effects/nature-horse-neigh-515279/		
+Horse Winnies	Sdanezis	https://pixabay.com/sound-effects/film-special-effects-horse-whinnies-amp-snorts-sfx-278668/		
+Horse neigh 	 ShadoWisp 	https://pixabay.com/sound-effects/nature-horse-neigh-shortened-84724/		
+Cartoon jump	Bastianhallo	https://pixabay.com/sound-effects/film-special-effects-cartoon-jump-6462/		
+Metal squeak	rdneubauer	https://pixabay.com/sound-effects/household-metal-squeak-2-91858/		
+Flesh impact	u_xjrmmgxfru	https://pixabay.com/sound-effects/film-special-effects-flesh-impact-266316/		
+Dragon roar2	DRAGON-STUDIO	https://pixabay.com/sound-effects/film-special-effects-dragon-roar-2-364479/		
+Charge up	cribbler	https://pixabay.com/sound-effects/film-special-effects-magic-chargeup-102051/		
+Treasure	floraphonic	https://pixabay.com/sound-effects/film-special-effects-coin-and-money-bag-2-185263/		
+Death	Fupicat	https://pixabay.com/sound-effects/film-special-effects-videogame-death-sound-43894/		
+Fire crackling	DRAGON-STUDIO	https://pixabay.com/sound-effects/nature-fire-crackling-sounds-427410/		
+Crowd talking	Defeated_Sanity	https://pixabay.com/sound-effects/people-crowd-talking-16756/		
+Winter wind	DRAGON-STUDIO	https://pixabay.com/sound-effects/nature-winter-wind-402331/		
+Victory	Universfield	https://pixabay.com/sound-effects/musical-victory-fanfare-152480/		"
 
+[node name="mainMenuButton" type="Button" parent="." unique_id=1925696093]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 555.0
+offset_right = 661.0
+offset_bottom = 580.0
+text = "Main Menu"
 
-"
+[connection signal="pressed" from="mainMenuButton" to="." method="_on_main_menu_button_pressed"]

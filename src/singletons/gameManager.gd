@@ -48,9 +48,9 @@ func cleanup() -> void:
 
 # Ends the current run session (status = lose)
 func endRun() -> void:
-	await get_tree().create_timer(2.0).timeout
-	setRunEndTimeTicks()
 	isRunOngoing = false
+	setRunEndTimeTicks()
+	await get_tree().create_timer(5.0).timeout
 	get_tree().change_scene_to_file("res://scenes/UI/credits.tscn")
 
 # Ends the current run session with a WIN status
@@ -64,6 +64,7 @@ func restartRun() -> void:
 	# check if there is a current run
 	resetRunStats()
 	# load game scene again ... or just move player back to start perhaps.
+	currentCollectibles = 0
 	# reload()
 	startRun()
 
