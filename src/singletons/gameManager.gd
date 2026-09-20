@@ -7,7 +7,7 @@ var runEndTimeTicks:int = 0
 var currentRunStats:RunStats
 
 var currentCollectibles:int = 0
-var maxCollectibles:int = 30
+var maxCollectibles:int = 13
 
 
 @export var isRunOngoing:bool = false
@@ -55,6 +55,7 @@ func endRun() -> void:
 
 # Ends the current run session with a WIN status
 func winGame() -> void:
+	princess.interactPrincess()
 	endRun()
 
 # Start the run from the beginning again, during a run
@@ -79,6 +80,7 @@ func setRunEndTimeTicks() -> void:
 func killPlayer() -> void:
 	print("we died")
 	await get_tree().create_timer(1.0).timeout
+	currentCollectibles = 0
 	get_tree().change_scene_to_file("res://scenes/UI/gameOverScreen.tscn")
 
 func teleportToPrincess() -> void:
