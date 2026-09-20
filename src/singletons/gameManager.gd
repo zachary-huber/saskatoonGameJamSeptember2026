@@ -76,8 +76,8 @@ func setRunEndTimeTicks() -> void:
 # Make player die and probably end the run.
 func killPlayer() -> void:
 	print("we died")
+	await get_tree().create_timer(1.0).timeout
 	get_tree().change_scene_to_file("res://scenes/UI/gameOverScreen.tscn")
-	pass
 
 func teleportToPrincess() -> void:
 	if princess:
@@ -86,7 +86,7 @@ func teleportToPrincess() -> void:
 func collect(thisCollectible:Collectible) -> void:
 	print("collecting collectible: ", thisCollectible.name)
 	self.currentCollectibles += 1
-	gameHUD.setCollectibleLabel(str(currentCollectibles) + "/" + str(maxCollectibles))
+	if gameHUD: gameHUD.setCollectibleLabel(str(currentCollectibles) + "/" + str(maxCollectibles))
 
 # Parse command and do something or call some function
 func issueCommand(thisCommand:HUD.Commands) -> void:

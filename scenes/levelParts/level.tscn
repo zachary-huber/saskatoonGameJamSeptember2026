@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cbqh14iqhima4" path="res://data/textures/BG_parallax/Game_jam_BG_hills.png" id="8_fip2a"]
 [ext_resource type="Texture2D" uid="uid://bd0n4jw83llyg" path="res://data/textures/BG_parallax/Game_jam_BG_hills2.png" id="9_n6qan"]
 [ext_resource type="PackedScene" uid="uid://dq8g55odvi4fr" path="res://scenes/levelParts/collectible.tscn" id="10_7lfhk"]
-[ext_resource type="PackedScene" uid="uid://d4hfgxt1op56d" path="res://scenes/UI/hud.tscn" id="11_m8c68"]
+[ext_resource type="PackedScene" uid="uid://388hoqyjo2fv" path="res://scenes/levelParts/dragon_trap.tscn" id="11_m8c68"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2en0l"]
 resource_name = "Spikes"
@@ -79,6 +79,7 @@ position = Vector2(-138, -127)
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=1024026383]
 
 [node name="parallaxBG" type="Node2D" parent="." unique_id=1823841543]
+visible = false
 position = Vector2(693, 361)
 
 [node name="skyBG" type="Parallax2D" parent="parallaxBG" unique_id=1131779565]
@@ -129,4 +130,4 @@ texture = ExtResource("9_n6qan")
 [node name="collectible" parent="." unique_id=992575098 instance=ExtResource("10_7lfhk")]
 position = Vector2(-120, 96)
 
-[node name="HUD" parent="." unique_id=1919242333 instance=ExtResource("11_m8c68")]
+[node name="dragonTrap" parent="." unique_id=335135193 instance=ExtResource("11_m8c68")]
