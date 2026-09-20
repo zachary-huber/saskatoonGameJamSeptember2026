@@ -3,6 +3,15 @@
 [ext_resource type="Script" uid="uid://onlop1ew4mnp" path="res://src/UI/main_menu.gd" id="1_qwnig"]
 [ext_resource type="Theme" uid="uid://cltxyrhbu5idg" path="res://data/themes/mainTheme.tres" id="1_yonvy"]
 [ext_resource type="PackedScene" uid="uid://cna7gf6c7n2n1" path="res://scenes/UI/dev_button.tscn" id="3_5jstl"]
+[ext_resource type="Texture2D" uid="uid://cm1psfsgrhmk7" path="res://data/textures/Game_jam_title..png" id="3_ngj32"]
+[ext_resource type="Texture2D" uid="uid://ca31xyxd55qs7" path="res://data/textures/start_button.png" id="5_bm8t2"]
+[ext_resource type="Texture2D" uid="uid://hykgrfwlh0nn" path="res://data/textures/Quit_button.png" id="6_5d4ag"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5jstl"]
+texture = ExtResource("5_bm8t2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tfcbk"]
+texture = ExtResource("6_5d4ag")
 
 [node name="mainMenu" type="Control" unique_id=1142719045]
 layout_mode = 3
@@ -21,7 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.4117647, 0.8862745, 0.4117647, 1)
+color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1876285343]
 layout_mode = 1
@@ -30,6 +39,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("3_ngj32")
+stretch_mode = 5
 
 [node name="buttonsContainer" type="MarginContainer" parent="." unique_id=1725552586]
 layout_mode = 1
@@ -49,13 +60,17 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="devButton" parent="buttonsContainer/VBoxContainer" unique_id=287198253 instance=ExtResource("3_5jstl")]
+custom_minimum_size = Vector2(0, 36)
 layout_mode = 2
-text = "Start run"
+theme_override_styles/normal = SubResource("StyleBoxTexture_5jstl")
+text = ""
 devCommand = 8
 
 [node name="devButton2" parent="buttonsContainer/VBoxContainer" unique_id=500554849 instance=ExtResource("3_5jstl")]
+custom_minimum_size = Vector2(100, 36)
 layout_mode = 2
-text = "Quit game"
+theme_override_styles/normal = SubResource("StyleBoxTexture_tfcbk")
+text = ""
 devCommand = 6
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1284214384]
