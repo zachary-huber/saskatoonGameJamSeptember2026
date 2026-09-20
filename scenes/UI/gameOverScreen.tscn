@@ -2,15 +2,17 @@
 
 [ext_resource type="Theme" uid="uid://cltxyrhbu5idg" path="res://data/themes/mainTheme.tres" id="1_t4tjp"]
 [ext_resource type="Texture2D" uid="uid://bb8juqvdhqqm7" path="res://data/textures/Game_jam_game_over.png" id="2_w0376"]
+[ext_resource type="Texture2D" uid="uid://bg878iex5a5ic" path="res://data/textures/Game_jam_game_over_YES2.png" id="3_w0376"]
 [ext_resource type="PackedScene" uid="uid://cna7gf6c7n2n1" path="res://scenes/UI/dev_button.tscn" id="4_unaym"]
-[ext_resource type="Texture2D" uid="uid://ca31xyxd55qs7" path="res://data/textures/start_button.png" id="5_qysua"]
-[ext_resource type="Texture2D" uid="uid://hykgrfwlh0nn" path="res://data/textures/Quit_button.png" id="6_s5ydf"]
+[ext_resource type="Texture2D" uid="uid://k04wqyc8uidp" path="res://data/textures/Game_jam_game_over_NO2.png" id="6_t4tjp"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5jstl"]
-texture = ExtResource("5_qysua")
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w0376"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tfcbk"]
-texture = ExtResource("6_s5ydf")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_quh8q"]
+texture = ExtResource("3_w0376")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n87ul"]
+texture = ExtResource("6_t4tjp")
 
 [node name="gameOver" type="Control" unique_id=1142719045]
 layout_mode = 3
@@ -41,28 +43,31 @@ texture = ExtResource("2_w0376")
 stretch_mode = 5
 
 [node name="devButton" parent="." unique_id=287198253 instance=ExtResource("4_unaym")]
-self_modulate = Color(1, 1, 1, 0)
+z_index = 1
 custom_minimum_size = Vector2(0, 36)
 layout_mode = 0
-offset_left = 824.0
-offset_top = 319.0
-offset_right = 924.0
-offset_bottom = 355.0
+offset_left = 799.0
+offset_top = 301.0
+offset_right = 927.5714
+offset_bottom = 351.5
 scale = Vector2(1.6800001, 2)
-theme_override_styles/normal = SubResource("StyleBoxTexture_5jstl")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w0376")
+theme_override_styles/hover = SubResource("StyleBoxTexture_quh8q")
 text = ""
 devCommand = 8
 
 [node name="devButton2" parent="." unique_id=500554849 instance=ExtResource("4_unaym")]
-self_modulate = Color(1, 1, 1, 0)
+z_index = 1
 custom_minimum_size = Vector2(100, 36)
 layout_mode = 0
-offset_left = 164.0
-offset_top = 322.0
-offset_right = 264.0
-offset_bottom = 358.0
+offset_left = 163.0
+offset_top = 317.0
+offset_right = 266.57144
+offset_bottom = 362.0
 scale = Vector2(1.6800001, 2)
-theme_override_styles/normal = SubResource("StyleBoxTexture_tfcbk")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w0376")
+theme_override_styles/hover = SubResource("StyleBoxTexture_n87ul")
 text = ""
 devCommand = 6
 
