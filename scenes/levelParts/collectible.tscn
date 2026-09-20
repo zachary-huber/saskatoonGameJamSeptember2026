@@ -9,7 +9,7 @@
 script = ExtResource("1_hk4on")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1820163178]
-position = Vector2(3.44, 3.28)
+position = Vector2(8, 8)
 sprite_frames = ExtResource("1_omiqn")
 animation = &"treasure"
 autoplay = "treasure"
@@ -21,4 +21,5 @@ collision_layer = 9
 collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=78061311]
+position = Vector2(5, 5)
 shape = SubResource("CircleShape2D_wtm8x")

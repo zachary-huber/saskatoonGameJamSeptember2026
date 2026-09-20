@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bfd5mrxl7katc"]
+
+[ext_resource type="SpriteFrames" uid="uid://bld5j4ba6008m" path="res://data/spriteFrames/assetsSpriteFrames.tres" id="1_mmt37"]
+
+[sub_resource type="Gradient" id="Gradient_v5sc6"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d0u6y"]
+gradient = SubResource("Gradient_v5sc6")
+fill = 1
+fill_from = Vector2(0.5121528, 0.4982639)
+fill_to = Vector2(0.5052083, 0)
+
+[node name="Torch" type="AnimatedSprite2D" unique_id=729955842]
+sprite_frames = ExtResource("1_mmt37")
+animation = &"torch"
+autoplay = "torch"
+frame_progress = 0.42365545
+offset = Vector2(8, 8)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1696630471]
+position = Vector2(8, 8)
+scale = Vector2(2.655552, 2.9449792)
+color = Color(1, 0.668, 0.17000002, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_d0u6y")

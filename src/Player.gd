@@ -4,6 +4,7 @@ var standing : bool = false
 var timer_activated : bool = false
 var setting_direction : bool = false
 var increasing : int = -1
+var can_play : bool = true
 
 var cur_pos : Vector2
 var last_pos : Vector2
@@ -76,46 +77,49 @@ func _process(delta: float) -> void:
 			i.scale.y = remap(time_left, 0.0, 2.0, 1.0, 0.5)
 
 func _input(event: InputEvent) -> void:
-	if setting_direction:
-		print(jump_direction.global_position)
-	
-	# set correct direction
-	elif event.is_action_pressed("set direction") and standing:
-		print("setting direction")
-		setting_direction = true
-	
-	# begin charging jump
-	if event.is_action_pressed("jump"):
-		if not standing:
-			if (middle_1.is_colliding() or middle_2.is_colliding()) and (velocity.x < 1.0 and velocity.x > -1.0):
-				enable_standing()
-		elif standing:
-			timer_activated = true
-			timer.start(2)
-			# show jump indicator
-			if jumpStrengthProgressBar: 
-				jumpStrengthProgressBar.visible = true
-	
-	# release charging and actually jump
-	if event.is_action_released("jump") and timer_activated:
-		var time_left = -timer.time_left + 2
-		var changer : int
-		if right_side.visible == true:
-			changer = 1
-		else:
-			changer = -1
-		var direction = Vector2(h_jump_dist * changer, -v_jump_dist) * time_left
-		for i in sprite_array:
-			i.scale.y = 1.0
-		disable_standing()
-		apply_impulse(direction)
-		timer_activated = false
-		# hide jump indicator
-		if jumpStrengthProgressBar: jumpStrengthProgressBar.visible = false
+	if can_play:
+		if setting_direction:
+			print(jump_direction.global_position)
+		
+		# set correct direction
+		elif event.is_action_pressed("set direction") and standing:
+			print("setting direction")
+			setting_direction = true
+		
+		# begin charging jump
+		if event.is_action_pressed("jump"):
+			if not standing:
+				if (middle_1.is_colliding() or middle_2.is_colliding()) and (velocity.x < 1.0 and velocity.x > -1.0):
+					enable_standing()
+			elif standing:
+				timer_activated = true
+				timer.start(2)
+				# show jump indicator
+				if jumpStrengthProgressBar: 
+					jumpStrengthProgressBar.visible = true
+		
+		# release charging and actually jump
+		if event.is_action_released("jump") and timer_activated:
+			var time_left = -timer.time_left + 2
+			var changer : int
+			if right_side.visible == true:
+				changer = 1
+			else:
+				changer = -1
+			var direction = Vector2(h_jump_dist * changer, -v_jump_dist) * time_left
+			for i in sprite_array:
+				i.scale.y = 1.0
+			disable_standing()
+			apply_impulse(direction)
+			timer_activated = false
+			# hide jump indicator
+			if jumpStrengthProgressBar: jumpStrengthProgressBar.visible = false
 
 
 func _physics_process(delta: float) -> void:
-	var direction : float = Input.get_axis("move left", "move right")
+	var direction : float
+	if can_play:
+		direction = Input.get_axis("move left", "move right")
 	
 	if standing:
 		if direction < 0:
@@ -169,6 +173,10 @@ func disable_standing() -> void:
 	freeze = false
 
 func enable_standing() -> void:
+	if GameManager.princess.player_here:
+		print("hello")
+		can_play = false
+		GameManager.winGame()
 	standing = true
 	freeze = true
 
