@@ -103,6 +103,7 @@ collision_mask = 2
 one_shot = true
 
 [node name="Anchor" type="Node2D" parent="chair" unique_id=500528669]
+visible = false
 position = Vector2(0, -15)
 rotation = -1.2653637
 
