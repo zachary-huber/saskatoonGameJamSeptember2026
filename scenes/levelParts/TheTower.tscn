@@ -1,12 +1,12 @@
 [gd_scene format=4 uid="uid://dkc4buq4b8lyu"]
 
-[ext_resource type="Texture2D" uid="uid://ch7cbe24jjj4f" path="res://data/textures/ground_tiles.png" id="1_a5blh"]
-[ext_resource type="Texture2D" uid="uid://df4jh7tj5bl0e" path="res://data/textures/Game_jam-edited.png" id="1_a5c3y"]
-[ext_resource type="PackedScene" uid="uid://dd2t61b4rfd4w" path="res://scenes/character.tscn" id="3_q5te6"]
+[ext_resource type="Texture2D" uid="uid://ch7cbe24jjj4f" path="res://data/textures/ground_tiles.png" id="1_xplfc"]
+[ext_resource type="Texture2D" uid="uid://df4jh7tj5bl0e" path="res://data/textures/Game_jam-edited.png" id="2_5r64l"]
+[ext_resource type="PackedScene" uid="uid://dd2t61b4rfd4w" path="res://scenes/character.tscn" id="3_4qykj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q5te6"]
 resource_name = "Solid Ground"
-texture = ExtResource("1_a5blh")
+texture = ExtResource("1_xplfc")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -210,7 +210,7 @@ texture = ExtResource("1_a5blh")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aq2cq"]
 resource_name = "One Way"
-texture = ExtResource("1_a5blh")
+texture = ExtResource("1_xplfc")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 0:0/0/physics_layer_0/polygon_0/one_way = true
@@ -520,7 +520,7 @@ sources/2 = SubResource("TileSetAtlasSource_aq2cq")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uqlxd"]
 resource_name = "Ground Visuals"
-texture = ExtResource("1_a5blh")
+texture = ExtResource("1_xplfc")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -624,7 +624,7 @@ texture = ExtResource("1_a5blh")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ukx23"]
 resource_name = "Building Visuals"
-texture = ExtResource("1_a5c3y")
+texture = ExtResource("2_5r64l")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -712,13 +712,15 @@ texture = ExtResource("1_a5c3y")
 sources/0 = SubResource("TileSetAtlasSource_uqlxd")
 sources/1 = SubResource("TileSetAtlasSource_ukx23")
 
-[node name="Ground" type="TileMapLayer" unique_id=1434778080]
+[node name="TheTower" type="Node2D" unique_id=876320076]
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=1434778080]
 tile_map_data = PackedByteArray("AAABAAAAAAAEAAEAAAABAAEAAAAEAAEAAAABAAIAAAAEAAEAAAACAAAAAAAEAAEAAAACAAEAAAAEAAEAAAACAAIAAAAEAAEAAAADAAAAAAAEAAEAAAADAAEAAAAEAAEAAAADAAIAAAAEAAEAAAAEAAAAAAAEAAEAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAEAAAAFAAAAAAAEAAEAAAAFAAEAAAAEAAEAAAAFAAIAAAAEAAEAAAAGAAAAAAAEAAEAAAAGAAEAAAAEAAEAAAAGAAIAAAAEAAEAAAAHAAAAAAAEAAEAAAAHAAEAAAAEAAEAAAAHAAIAAAAEAAEAAAAIAAAAAAAEAAEAAAAIAAEAAAAEAAEAAAAIAAIAAAAEAAEAAAAJAAAAAAAEAAEAAAAJAAEAAAAEAAEAAAAJAAIAAAAEAAEAAAAKAAAAAAAEAAEAAAAKAAEAAAAEAAEAAAAKAAIAAAAEAAEAAAALAAAAAAAEAAEAAAALAAEAAAAEAAEAAAALAAIAAAAEAAEAAAAMAAAAAAAEAAEAAAAMAAEAAAAEAAEAAAAMAAIAAAAEAAEAAAANAAAAAAAEAAEAAAANAAEAAAAEAAEAAAANAAIAAAAEAAEAAAAOAAAAAAAEAAEAAAAOAAEAAAAEAAEAAAAOAAIAAAAEAAEAAAAPAAAAAAAEAAEAAAAPAAEAAAAEAAEAAAAPAAIAAAAEAAEAAAAQAAAAAAAEAAEAAAAQAAEAAAAEAAEAAAAQAAIAAAAEAAEAAAARAAAAAAAEAAEAAAARAAEAAAAEAAEAAAARAAIAAAAEAAEAAAASAAAAAAAEAAEAAAASAAEAAAAEAAEAAAASAAIAAAAEAAEAAAATAAAAAAAEAAEAAAATAAEAAAAEAAEAAAATAAIAAAAEAAEAAAAUAAAAAAAEAAEAAAAUAAEAAAAEAAEAAAAUAAIAAAAEAAEAAAAVAAAAAAAEAAEAAAAVAAEAAAAEAAEAAAAVAAIAAAAEAAEAAAAFAP3/AgACAAMAAAAFAP7/AgABAAgAAAAFAP//AgACAAgAAAAGAP3/AgACAAMAAAAGAP7/AgABAAgAAAAGAP//AgACAAgAAAAHAP3/AgACAAMAAAAHAP7/AgABAAgAAAAHAP//AgACAAgAAAAIAP3/AgACAAMAAAAIAP7/AgABAAgAAAAIAP//AgACAAgAAAA=")
 tile_set = SubResource("TileSet_g4v7s")
-
-[node name="Node2D" parent="." unique_id=172420841 instance=ExtResource("3_q5te6")]
-position = Vector2(226, -56)
 
 [node name="Visuals" type="TileMapLayer" parent="." unique_id=736147742]
 tile_map_data = PackedByteArray("AAASAP3/AQABAAMAAAASAP7/AQABAAQAAAATAP3/AQACAAMAAAATAP7/AQACAAQAAAAUAP3/AQADAAMAAAAUAP7/AQADAAQAAAASAP//AQABAAUAAAATAP//AQACAAUAAAAUAP//AQADAAUAAAAVAP3/AQAEAAMAAAAVAP7/AQAEAAQAAAAVAP//AQAEAAUAAAA=")
 tile_set = SubResource("TileSet_yf5fn")
+
+[node name="Node2D" parent="." unique_id=172420841 instance=ExtResource("3_4qykj")]
+position = Vector2(226, -56)
