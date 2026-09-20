@@ -48,8 +48,10 @@ func cleanup() -> void:
 
 # Ends the current run session (status = lose)
 func endRun() -> void:
+	await get_tree().create_timer(2.0).timeout
 	setRunEndTimeTicks()
 	isRunOngoing = false
+	get_tree().change_scene_to_file("res://scenes/UI/credits.tscn")
 
 # Ends the current run session with a WIN status
 func winGame() -> void:

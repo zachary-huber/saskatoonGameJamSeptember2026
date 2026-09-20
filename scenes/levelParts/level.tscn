@@ -131,3 +131,6 @@ texture = ExtResource("9_n6qan")
 position = Vector2(-120, 96)
 
 [node name="dragonTrap" parent="." unique_id=335135193 instance=ExtResource("11_m8c68")]
+
+[node name="princess" parent="dragonTrap" unique_id=685564180 instance=ExtResource("3_y01qp")]
+position = Vector2(-72, 88)

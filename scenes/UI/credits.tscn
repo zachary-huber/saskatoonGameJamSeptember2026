@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bxrk6rs250qtm"]
+
+[ext_resource type="Theme" uid="uid://cltxyrhbu5idg" path="res://data/themes/mainTheme.tres" id="1_g3j2f"]
+[ext_resource type="Texture2D" uid="uid://bb8juqvdhqqm7" path="res://data/textures/Game_jam_game_over.png" id="2_jq8gn"]
+[ext_resource type="PackedScene" uid="uid://cna7gf6c7n2n1" path="res://scenes/UI/dev_button.tscn" id="3_nioxy"]
+[ext_resource type="Texture2D" uid="uid://bg878iex5a5ic" path="res://data/textures/Game_jam_game_over_YES2.png" id="4_q4wsr"]
+[ext_resource type="Texture2D" uid="uid://k04wqyc8uidp" path="res://data/textures/Game_jam_game_over_NO2.png" id="5_83fsw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w0376"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_quh8q"]
+texture = ExtResource("4_q4wsr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n87ul"]
+texture = ExtResource("5_83fsw")
+
+[node name="credits" type="Control" unique_id=1142719045]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_g3j2f")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=292724763]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1876285343]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_jq8gn")
+stretch_mode = 5
+
+[node name="devButton" parent="." unique_id=287198253 instance=ExtResource("3_nioxy")]
+z_index = 1
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 0
+offset_left = 799.0
+offset_top = 301.0
+offset_right = 927.5714
+offset_bottom = 351.5
+scale = Vector2(1.6800001, 2)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w0376")
+theme_override_styles/hover = SubResource("StyleBoxTexture_quh8q")
+text = ""
+devCommand = 8
+
+[node name="devButton2" parent="." unique_id=500554849 instance=ExtResource("3_nioxy")]
+z_index = 1
+custom_minimum_size = Vector2(100, 36)
+layout_mode = 0
+offset_left = 163.0
+offset_top = 317.0
+offset_right = 266.57144
+offset_bottom = 362.0
+scale = Vector2(1.6800001, 2)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w0376")
+theme_override_styles/hover = SubResource("StyleBoxTexture_n87ul")
+text = ""
+devCommand = 6
+
+[node name="buttonsContainer" type="MarginContainer" parent="." unique_id=1725552586]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -15.5
+offset_right = 23.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buttonsContainer" unique_id=2011653586]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1284214384]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 67.0
+offset_bottom = 699.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 17
+text = "Collaborators
+
+Zac Huber -- Xander Boutin  -- Jade --Jackson
+
+
+SOUNDS USED
+
+Horse-neigh	https://pixabay.com/sound-effects/nature-horse-neigh-515279/			
+Horse Winnies	Sdanezis https://pixabay.com/sound-effects/film-special-effects-horse-whinnies-amp-snorts-sfx-278668/			
+Horse neigh	ShadoWisp https://pixabay.com/sound-effects/nature-horse-neigh-shortened-84724/			
+Cartoon jump	Bastianhallo https://pixabay.com/sound-effects/film-special-effects-cartoon-jump-6462/			
+Metal squeak	rdneubauer https://pixabay.com/sound-effects/household-metal-squeak-2-91858/			
+Flesh impact	u_xjrmmgxfru https://pixabay.com/sound-effects/film-special-effects-flesh-impact-266316/			
+Dragon roar2	DRAGON-STUDIO https://pixabay.com/sound-effects/film-special-effects-dragon-roar-2-364479/			
+Charge up	cribbler https://pixabay.com/sound-effects/film-special-effects-magic-chargeup-102051/			
+Treasure	floraphonic https://pixabay.com/sound-effects/film-special-effects-coin-and-money-bag-2-185263/			
+Death Fupicat 	https://pixabay.com/sound-effects/film-special-effects-videogame-death-sound-43894/			
+
+
+"
