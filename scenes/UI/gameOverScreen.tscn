@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://dcnb2cl0ihb6f"]
+
+[ext_resource type="Theme" uid="uid://cltxyrhbu5idg" path="res://data/themes/mainTheme.tres" id="1_t4tjp"]
+[ext_resource type="Texture2D" uid="uid://bb8juqvdhqqm7" path="res://data/textures/Game_jam_game_over.png" id="2_w0376"]
+[ext_resource type="PackedScene" uid="uid://cna7gf6c7n2n1" path="res://scenes/UI/dev_button.tscn" id="4_unaym"]
+[ext_resource type="Texture2D" uid="uid://ca31xyxd55qs7" path="res://data/textures/start_button.png" id="5_qysua"]
+[ext_resource type="Texture2D" uid="uid://hykgrfwlh0nn" path="res://data/textures/Quit_button.png" id="6_s5ydf"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5jstl"]
+texture = ExtResource("5_qysua")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tfcbk"]
+texture = ExtResource("6_s5ydf")
+
+[node name="gameOver" type="Control" unique_id=1142719045]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t4tjp")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=292724763]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1876285343]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_w0376")
+stretch_mode = 5
+
+[node name="devButton" parent="." unique_id=287198253 instance=ExtResource("4_unaym")]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 0
+offset_left = 824.0
+offset_top = 319.0
+offset_right = 924.0
+offset_bottom = 355.0
+scale = Vector2(1.6800001, 2)
+theme_override_styles/normal = SubResource("StyleBoxTexture_5jstl")
+text = ""
+devCommand = 8
+
+[node name="devButton2" parent="." unique_id=500554849 instance=ExtResource("4_unaym")]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(100, 36)
+layout_mode = 0
+offset_left = 164.0
+offset_top = 322.0
+offset_right = 264.0
+offset_bottom = 358.0
+scale = Vector2(1.6800001, 2)
+theme_override_styles/normal = SubResource("StyleBoxTexture_tfcbk")
+text = ""
+devCommand = 6
+
+[node name="buttonsContainer" type="MarginContainer" parent="." unique_id=1725552586]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -23.5
+offset_top = -15.5
+offset_right = 23.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="buttonsContainer" unique_id=2011653586]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1284214384]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 53
+text = "
+HEAD OVER HEELS GAME"
+horizontal_alignment = 1

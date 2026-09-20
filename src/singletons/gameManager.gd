@@ -19,9 +19,9 @@ func _ready() -> void:
 	pass
 
 func _input(event: InputEvent) -> void:
-	pass
-	#if event.is_action_pressed("escape"):
-		#if gameHUD: gameHUD.toggleHUD()
+	#pass
+	if event.is_action_pressed("escape"):
+		if gameHUD: gameHUD.toggleHUD()
 
 # Load and show the main menu scene
 func seeMainMenu() -> void:
@@ -73,6 +73,7 @@ func setRunEndTimeTicks() -> void:
 # Make player die and probably end the run.
 func killPlayer() -> void:
 	print("we died")
+	get_tree().change_scene_to_file("res://scenes/UI/gameOverScreen.tscn")
 	pass
 
 func teleportToPrincess() -> void:
