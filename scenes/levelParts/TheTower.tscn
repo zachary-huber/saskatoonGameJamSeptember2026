@@ -1,10 +1,11 @@
-[gd_scene format=4 uid="uid://dkc4buq4b8lyu"]
+[gd_scene format=3 uid="uid://dkc4buq4b8lyu"]
 
 [ext_resource type="Texture2D" uid="uid://ch7cbe24jjj4f" path="res://data/textures/ground_tiles.png" id="1_xplfc"]
 [ext_resource type="Texture2D" uid="uid://cbyemwb4g2r8o" path="res://data/textures/Spikes.png" id="2_4qykj"]
 [ext_resource type="Texture2D" uid="uid://df4jh7tj5bl0e" path="res://data/textures/Game_jam-edited.png" id="2_5r64l"]
 [ext_resource type="PackedScene" uid="uid://dd2t61b4rfd4w" path="res://scenes/character.tscn" id="3_4qykj"]
 [ext_resource type="Texture2D" uid="uid://b3yt4ony1y4mv" path="res://data/textures/Game_jam_BG.png" id="4_5r64l"]
+[ext_resource type="Script" uid="uid://cwwcer4hantyu" path="res://scenes/levelParts/Camera.gd" id="6_rr2lr"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_5r64l"]
 tile_data = PackedInt32Array(0, 131072, 0, 65536, 524288, 9, 131072, 524288, 9, 196608, 524288, 9, 262144, 524288, 9, 1, 131072, 0, 65537, 524288, 9, 131073, 524288, 9, 196609, 524288, 9, 262145, 524288, 9, 2, 131072, 0, 65538, 524288, 9, 131074, 524288, 9, 196610, 524288, 9, 262146, 524288, 9, 3, 131072, 0, 65539, 524288, 9, 131075, 524288, 9, 196611, 524288, 9, 262147, 524288, 9, 4, 131072, 0, 65540, 524288, 9, 131076, 524288, 9, 196612, 524288, 9, 262148, 524288, 9, 5, 131072, 0, 65541, 524288, 9, 131077, 524288, 9, 196613, 524288, 9, 262149, 524288, 9)
@@ -773,8 +774,166 @@ sources/1 = SubResource("TileSetAtlasSource_ukx23")
 
 [node name="TheTower" type="Node2D" unique_id=876320076]
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=999258224]
+offset_top = -720.0
+offset_right = 1280.0
+color = Color(1, 0, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=464215739]
+offset_left = 1280.0
+offset_top = -720.0
+offset_right = 2560.0
+color = Color(4.235506e-06, 0.6643337, 0.9700832, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1319384271]
+offset_top = -1440.0
+offset_right = 1280.0
+offset_bottom = -720.0
+color = Color(0.8233853, 0.565809, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=134855995]
+offset_left = 1280.0
+offset_top = -1440.0
+offset_right = 2560.0
+offset_bottom = -720.0
+color = Color(0.7854003, 0.5490278, 0.5608518, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="." unique_id=1519846612]
+offset_left = 2560.0
+offset_top = -720.0
+offset_right = 3840.0
+color = Color(1, 0, 1, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="." unique_id=1394479558]
+offset_left = 3840.0
+offset_top = -720.0
+offset_right = 5120.0
+color = Color(4.235506e-06, 0.6643337, 0.9700832, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="." unique_id=818202679]
+offset_left = 2560.0
+offset_top = -1440.0
+offset_right = 3840.0
+offset_bottom = -720.0
+color = Color(0.8233853, 0.565809, 0, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="." unique_id=305470886]
+offset_left = 3840.0
+offset_top = -1440.0
+offset_right = 5120.0
+offset_bottom = -720.0
+color = Color(0.7854003, 0.5490278, 0.5608518, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="." unique_id=1655768998]
+offset_top = -2160.0
+offset_right = 1280.0
+offset_bottom = -1440.0
+color = Color(1, 0, 1, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="." unique_id=1794856638]
+offset_left = 1280.0
+offset_top = -2160.0
+offset_right = 2560.0
+offset_bottom = -1440.0
+color = Color(4.235506e-06, 0.6643337, 0.9700832, 1)
+
+[node name="ColorRect11" type="ColorRect" parent="." unique_id=396276278]
+offset_top = -2880.0
+offset_right = 1280.0
+offset_bottom = -2160.0
+color = Color(0.8233853, 0.565809, 0, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="." unique_id=1510101815]
+offset_left = 1280.0
+offset_top = -2880.0
+offset_right = 2560.0
+offset_bottom = -2160.0
+color = Color(0.7854003, 0.5490278, 0.5608518, 1)
+
+[node name="ColorRect13" type="ColorRect" parent="." unique_id=485340979]
+offset_left = 2560.0
+offset_top = -2160.0
+offset_right = 3840.0
+offset_bottom = -1440.0
+color = Color(1, 0, 1, 1)
+
+[node name="ColorRect14" type="ColorRect" parent="." unique_id=274452059]
+offset_left = 3840.0
+offset_top = -2160.0
+offset_right = 5120.0
+offset_bottom = -1440.0
+color = Color(4.235506e-06, 0.6643337, 0.9700832, 1)
+
+[node name="ColorRect15" type="ColorRect" parent="." unique_id=1751750697]
+offset_left = 2560.0
+offset_top = -2880.0
+offset_right = 3840.0
+offset_bottom = -2160.0
+color = Color(0.8233853, 0.565809, 0, 1)
+
+[node name="ColorRect16" type="ColorRect" parent="." unique_id=415134528]
+offset_left = 3840.0
+offset_top = -2880.0
+offset_right = 5120.0
+offset_bottom = -2160.0
+color = Color(0.7854003, 0.5490278, 0.5608518, 1)
+
+[node name="ColorRect17" type="ColorRect" parent="." unique_id=1676392516]
+offset_top = -3600.0
+offset_right = 1280.0
+offset_bottom = -2880.0
+color = Color(1, 0, 1, 1)
+
+[node name="ColorRect18" type="ColorRect" parent="." unique_id=374463937]
+offset_left = 1280.0
+offset_top = -3600.0
+offset_right = 2560.0
+offset_bottom = -2880.0
+color = Color(4.235506e-06, 0.6643337, 0.9700832, 1)
+
+[node name="ColorRect19" type="ColorRect" parent="." unique_id=1240453461]
+offset_top = -4320.0
+offset_right = 1280.0
+offset_bottom = -3600.0
+color = Color(0.8233853, 0.565809, 0, 1)
+
+[node name="ColorRect20" type="ColorRect" parent="." unique_id=50238451]
+offset_left = 1280.0
+offset_top = -4320.0
+offset_right = 2560.0
+offset_bottom = -3600.0
+color = Color(0.7854003, 0.5490278, 0.5608518, 1)
+
+[node name="ColorRect21" type="ColorRect" parent="." unique_id=1879905426]
+offset_left = 2560.0
+offset_top = -3600.0
+offset_right = 3840.0
+offset_bottom = -2880.0
+color = Color(1, 0, 1, 1)
+
+[node name="ColorRect22" type="ColorRect" parent="." unique_id=1549671661]
+offset_left = 3840.0
+offset_top = -3600.0
+offset_right = 5120.0
+offset_bottom = -2880.0
+color = Color(4.235506e-06, 0.6643337, 0.9700832, 1)
+
+[node name="ColorRect23" type="ColorRect" parent="." unique_id=1543601441]
+offset_left = 2560.0
+offset_top = -4320.0
+offset_right = 3840.0
+offset_bottom = -3600.0
+color = Color(0.8233853, 0.565809, 0, 1)
+
+[node name="ColorRect24" type="ColorRect" parent="." unique_id=34205113]
+offset_left = 3840.0
+offset_top = -4320.0
+offset_right = 5120.0
+offset_bottom = -3600.0
+color = Color(0.7854003, 0.5490278, 0.5608518, 1)
+
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1434778080]
-tile_map_data = PackedByteArray("AAAUAAIAAAAAAAgAAAAVAAIAAAAAAAgAAAAUAAMAAAACAAIAAAAVAAMAAAACAAgAAAAUAAQAAAACAAgAAAAUAAUAAAACAAgAAAAUAAYAAAACAAIAAAAUAAcAAAACAAgAAAAVAAQAAAACAAgAAAAVAAUAAAACAAgAAAAVAAYAAAACAAgAAAAVAAcAAAACAAgAAAAWAAIAAAAAAAgAAAAWAAMAAAACAAgAAAAWAAQAAAACAAgAAAAWAAUAAAACAAgAAAAWAAYAAAACAAgAAAAWAAcAAAACAAgAAAAXAAIAAAAAAAgAAAAXAAMAAAACAAgAAAAXAAQAAAACAAgAAAAXAAUAAAACAAgAAAAXAAYAAAACAAgAAAAXAAcAAAACAAgAAAAYAAIAAAAAAAgAAAAYAAMAAAACAAgAAAAYAAQAAAACAAgAAAAYAAUAAAACAAgAAAAYAAYAAAACAAgAAAAYAAcAAAACAAgAAAAZAAIAAAAAAAgAAAAZAAMAAAACAAgAAAAZAAQAAAACAAgAAAAZAAUAAAACAAgAAAAZAAYAAAACAAgAAAAZAAcAAAACAAgAAAAaAAIAAAAAAAgAAAAaAAMAAAACAAgAAAAaAAQAAAACAAgAAAAaAAUAAAACAAgAAAAaAAYAAAACAAgAAAAaAAcAAAACAAgAAAAbAAIAAAAAAAgAAAAbAAMAAAACAAgAAAAbAAQAAAACAAgAAAAbAAUAAAACAAgAAAAbAAYAAAACAAgAAAAbAAcAAAACAAgAAAAcAAIAAAAAAAgAAAAcAAMAAAACAAgAAAAcAAQAAAACAAgAAAAcAAUAAAACAAgAAAAcAAYAAAACAAgAAAAcAAcAAAACAAgAAAAdAAIAAAAAAAgAAAAdAAMAAAACAAgAAAAdAAQAAAACAAgAAAAdAAUAAAACAAgAAAAdAAYAAAACAAgAAAAdAAcAAAACAAgAAAAeAAIAAAAAAAgAAAAeAAMAAAACAAgAAAAeAAQAAAACAAgAAAAeAAUAAAACAAgAAAAeAAYAAAACAAgAAAAeAAcAAAACAAgAAAAUAAgAAAACAAgAAAAUAAkAAAACAAIAAAAUAAoAAAACAAgAAAAUAAsAAAACAAgAAAAUAAwAAAACAAIAAAAUAA0AAAACAAgAAAAUAA4AAAACAAgAAAAUAA8AAAACAAIAAAAUABAAAAACAAgAAAAUABEAAAACAAgAAAAUABIAAAACAAIAAAAUABMAAAACAAgAAAAUABQAAAACAAgAAAAUABUAAAACAAgAAAAVAAgAAAACAAgAAAAVAAkAAAACAAgAAAAVAAoAAAACAAgAAAAVAAsAAAACAAgAAAAVAAwAAAACAAgAAAAVAA0AAAACAAgAAAAVAA4AAAACAAgAAAAVAA8AAAACAAgAAAAVABAAAAACAAgAAAAVABEAAAACAAgAAAAVABIAAAACAAgAAAAVABMAAAACAAgAAAAVABQAAAACAAgAAAAVABUAAAACAAgAAAAWAAgAAAACAAgAAAAWAAkAAAACAAgAAAAWAAoAAAACAAgAAAAWAAsAAAACAAgAAAAWAAwAAAACAAgAAAAWAA0AAAACAAgAAAAWAA4AAAACAAgAAAAWAA8AAAACAAgAAAAWABAAAAACAAgAAAAWABEAAAACAAgAAAAWABIAAAACAAgAAAAWABMAAAACAAgAAAAWABQAAAACAAgAAAAWABUAAAACAAgAAAAXAAgAAAACAAgAAAAXAAkAAAACAAgAAAAXAAoAAAACAAgAAAAXAAsAAAACAAgAAAAXAAwAAAACAAgAAAAXAA0AAAACAAgAAAAXAA4AAAACAAgAAAAXAA8AAAACAAgAAAAXABAAAAACAAgAAAAXABEAAAACAAgAAAAXABIAAAACAAgAAAAXABMAAAACAAgAAAAXABQAAAACAAgAAAAXABUAAAACAAgAAAAYAAgAAAACAAgAAAAYAAkAAAACAAgAAAAYAAoAAAACAAgAAAAYAAsAAAACAAgAAAAYAAwAAAACAAgAAAAYAA0AAAACAAgAAAAYAA4AAAACAAgAAAAYAA8AAAACAAgAAAAYABAAAAACAAgAAAAYABEAAAACAAgAAAAYABIAAAACAAgAAAAYABMAAAACAAgAAAAYABQAAAACAAgAAAAYABUAAAACAAgAAAAZAAgAAAACAAgAAAAZAAkAAAACAAgAAAAZAAoAAAACAAgAAAAZAAsAAAACAAgAAAAZAAwAAAACAAgAAAAZAA0AAAACAAgAAAAZAA4AAAACAAgAAAAZAA8AAAACAAgAAAAZABAAAAACAAgAAAAZABEAAAACAAgAAAAZABIAAAACAAgAAAAZABMAAAACAAgAAAAZABQAAAACAAgAAAAZABUAAAACAAgAAAAaAAgAAAACAAgAAAAaAAkAAAACAAgAAAAaAAoAAAACAAgAAAAaAAsAAAACAAgAAAAaAAwAAAACAAgAAAAaAA0AAAACAAgAAAAaAA4AAAACAAgAAAAaAA8AAAACAAgAAAAaABAAAAACAAgAAAAaABEAAAACAAgAAAAaABIAAAACAAgAAAAaABMAAAACAAgAAAAaABQAAAACAAgAAAAaABUAAAACAAgAAAAbAAgAAAACAAgAAAAbAAkAAAACAAgAAAAbAAoAAAACAAgAAAAbAAsAAAACAAgAAAAbAAwAAAACAAgAAAAbAA0AAAACAAgAAAAbAA4AAAACAAgAAAAbAA8AAAACAAgAAAAbABAAAAACAAgAAAAbABEAAAACAAgAAAAbABIAAAACAAgAAAAbABMAAAACAAgAAAAbABQAAAACAAgAAAAbABUAAAACAAgAAAAcAAgAAAACAAgAAAAcAAkAAAACAAgAAAAcAAoAAAACAAgAAAAcAAsAAAACAAgAAAAcAAwAAAACAAgAAAAcAA0AAAACAAgAAAAcAA4AAAACAAgAAAAcAA8AAAACAAgAAAAcABAAAAACAAgAAAAcABEAAAACAAgAAAAcABIAAAACAAgAAAAcABMAAAACAAgAAAAcABQAAAACAAgAAAAcABUAAAACAAgAAAAdAAgAAAACAAgAAAAdAAkAAAACAAgAAAAdAAoAAAACAAgAAAAdAAsAAAACAAgAAAAdAAwAAAACAAgAAAAdAA0AAAACAAgAAAAdAA4AAAACAAgAAAAdAA8AAAACAAgAAAAdABAAAAACAAgAAAAdABEAAAACAAgAAAAdABIAAAACAAgAAAAdABMAAAACAAgAAAAdABQAAAACAAgAAAAdABUAAAACAAgAAAAeAAgAAAACAAgAAAAeAAkAAAACAAgAAAAeAAoAAAACAAgAAAAeAAsAAAACAAgAAAAeAAwAAAACAAgAAAAeAA0AAAACAAgAAAAeAA4AAAACAAgAAAAeAA8AAAACAAgAAAAeABAAAAACAAgAAAAeABEAAAACAAgAAAAeABIAAAACAAgAAAAeABMAAAACAAgAAAAeABQAAAACAAgAAAAeABUAAAACAAgAAAASABMAAAACAAgAAAASABQAAAACAAgAAAASABUAAAACAAgAAAATABMAAAACAAgAAAATABQAAAACAAgAAAATABUAAAACAAgAAAD4/xMAAAAFAAEAAAD4/xQAAAAFAAEAAAD4/xUAAAAFAAEAAAD1/xMAAAAFAAEAAAD1/xQAAAAFAAEAAAD1/xUAAAAFAAEAAAD2/xMAAAAFAAEAAAD2/xQAAAAFAAEAAAD2/xUAAAAFAAEAAAD3/xMAAAAFAAEAAAD3/xQAAAAFAAEAAAD3/xUAAAAFAAEAAAD5/xMAAAACAAAAAAD6/xMAAAACAAAAAAD7/xMAAAACAAAAAAD8/xMAAAACAAAAAAD9/xMAAAACAAAAAAD+/xMAAAACAAAAAAD//xMAAAACAAAAAAAAABMAAAACAAAAAAABABMAAAACAAAAAAACABMAAAACAAAAAAADABMAAAACAAAAAAAEABMAAAACAAAAAAAFABMAAAACAAAAAAAGABMAAAACAAAAAAAHABMAAAACAAAAAAAIABMAAAACAAAAAAAJABMAAAACAAAAAAAKABMAAAACAAAAAAALABMAAAACAAAAAAAMABMAAAACAAAAAAANABMAAAACAAAAAAAOABMAAAACAAAAAAAPABMAAAACAAAAAAAQABMAAAACAAAAAAARABMAAAACAAAAAAA=")
+position = Vector2(0, -720)
 tile_set = SubResource("TileSet_g4v7s")
 
 [node name="Killers" type="TileMapLayer" parent="." unique_id=1923286078 groups=["killer"]]
@@ -783,8 +942,8 @@ tile_set = SubResource("TileSet_8n0vm")
 [node name="Visuals" type="TileMapLayer" parent="." unique_id=736147742]
 tile_set = SubResource("TileSet_yf5fn")
 
-[node name="player" parent="." unique_id=172420841 instance=ExtResource("3_4qykj")]
-position = Vector2(294, 297)
+[node name="Node2D" parent="." unique_id=172420841 instance=ExtResource("3_4qykj")]
+position = Vector2(440, -2892)
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=379449107]
 visible = false
@@ -798,3 +957,7 @@ material = SubResource("CanvasItemMaterial_5r64l")
 position = Vector2(222, -69)
 scale = Vector2(1.842932, 1.6062992)
 texture = ExtResource("4_5r64l")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=327582926]
+position = Vector2(640, 360)
+script = ExtResource("6_rr2lr")

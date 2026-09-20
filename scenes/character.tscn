@@ -77,10 +77,6 @@ stream = SubResource("AudioStreamRandomizer_7dta6")
 volume_db = -10.0
 pitch_scale = 1.31
 
-[node name="Camera2D" type="Camera2D" parent="chair" unique_id=1230208513]
-position = Vector2(0, -15)
-zoom = Vector2(1.705, 1.705)
-
 [node name="LeftDetector" type="RayCast2D" parent="chair" unique_id=684547987]
 position = Vector2(0, -15)
 target_position = Vector2(-18, 0)
