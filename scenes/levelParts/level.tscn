@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cnjmtp6gmsxhs" path="res://data/textures/BG_parallax/Game_jam_BG_clouds2.png" id="7_m8c68"]
 [ext_resource type="Texture2D" uid="uid://cbqh14iqhima4" path="res://data/textures/BG_parallax/Game_jam_BG_hills.png" id="8_fip2a"]
 [ext_resource type="Texture2D" uid="uid://bd0n4jw83llyg" path="res://data/textures/BG_parallax/Game_jam_BG_hills2.png" id="9_n6qan"]
+[ext_resource type="PackedScene" uid="uid://dq8g55odvi4fr" path="res://scenes/levelParts/collectible.tscn" id="10_7lfhk"]
+[ext_resource type="PackedScene" uid="uid://d4hfgxt1op56d" path="res://scenes/UI/hud.tscn" id="11_m8c68"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2en0l"]
 resource_name = "Spikes"
@@ -123,3 +125,8 @@ repeat_size = Vector2(380, 0)
 [node name="Sprite2D" type="Sprite2D" parent="parallaxBG/mountainsFront" unique_id=570512638]
 z_index = -1
 texture = ExtResource("9_n6qan")
+
+[node name="collectible" parent="." unique_id=992575098 instance=ExtResource("10_7lfhk")]
+position = Vector2(-120, 96)
+
+[node name="HUD" parent="." unique_id=1919242333 instance=ExtResource("11_m8c68")]

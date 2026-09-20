@@ -183,3 +183,12 @@ func flip_right() -> void:
 	right_side.visible = true
 	left_side.visible = false
 	jump_direction.scale.x = 1
+
+
+func _on_interact_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group("collectible"):
+		var collectible = area.get_parent()
+		print("collided with collectible: ", collectible.name)
+		GameManager.collect(collectible)
+		collectible.queue_free()
+		print("deleted collectible: ", collectible.name)

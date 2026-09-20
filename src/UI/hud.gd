@@ -34,3 +34,6 @@ func getTimeInSeconds() -> float:
 
 func getCompleteRunTimeSeconds() -> float:
 	return (GameManager.runEndTimeTicks - GameManager.runStartTimeTicks) / 1000000.0
+
+func setCollectibleLabel(newText:String) -> void:
+	$collectibleTrackLabel.text = newText

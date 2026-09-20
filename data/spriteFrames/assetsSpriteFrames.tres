@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bld5j4ba6008m"]
+
+[ext_resource type="Texture2D" uid="uid://dngd0fl0c32ic" path="res://data/textures/Game_jam-assets.png" id="1_uk16d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfxu4"]
+atlas = ExtResource("1_uk16d")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpf2e"]
+atlas = ExtResource("1_uk16d")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tgm5j"]
+atlas = ExtResource("1_uk16d")
+region = Rect2(48, 144, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfxu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpf2e")
+}],
+"loop": 1,
+"name": &"torch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tgm5j")
+}],
+"loop": 1,
+"name": &"treasure",
+"speed": 5.0
+}]

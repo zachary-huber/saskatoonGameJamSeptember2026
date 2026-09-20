@@ -6,6 +6,9 @@ var runCurrentTimeSeconds:int = 0
 var runEndTimeTicks:int = 0
 var currentRunStats:RunStats
 
+var currentCollectibles:int = 0
+var maxCollectibles:int = 30
+
 
 @export var isRunOngoing:bool = false
 
@@ -79,6 +82,11 @@ func killPlayer() -> void:
 func teleportToPrincess() -> void:
 	if princess:
 		player.global_position = princess.global_position + Vector2(-50.0, -200.0)
+
+func collect(thisCollectible:Collectible) -> void:
+	print("collecting collectible: ", thisCollectible.name)
+	self.currentCollectibles += 1
+	gameHUD.setCollectibleLabel(str(currentCollectibles) + "/" + str(maxCollectibles))
 
 # Parse command and do something or call some function
 func issueCommand(thisCommand:HUD.Commands) -> void:

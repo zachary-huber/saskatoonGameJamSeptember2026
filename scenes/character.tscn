@@ -574,3 +574,5 @@ fill_mode = 4
 texture_under = ExtResource("3_my7n2")
 texture_progress = ExtResource("4_dp8ca")
 tint_under = Color(1, 1, 1, 0.06666667)
+
+[connection signal="area_entered" from="chair/interactArea" to="chair" method="_on_interact_area_area_entered"]

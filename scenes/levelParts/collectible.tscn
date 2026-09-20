@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dq8g55odvi4fr"]
+
+[ext_resource type="Script" uid="uid://bdrkvrfovhvuw" path="res://src/levelParts/collectible.gd" id="1_hk4on"]
+[ext_resource type="SpriteFrames" uid="uid://bld5j4ba6008m" path="res://data/spriteFrames/assetsSpriteFrames.tres" id="1_omiqn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wtm8x"]
+
+[node name="collectible" type="Node2D" unique_id=992575098 groups=["collectible"]]
+script = ExtResource("1_hk4on")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1820163178]
+position = Vector2(3.44, 3.28)
+sprite_frames = ExtResource("1_omiqn")
+animation = &"treasure"
+autoplay = "treasure"
+frame_progress = 0.34443104
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1316771183 groups=["collectible"]]
+position = Vector2(4, 4)
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=78061311]
+shape = SubResource("CircleShape2D_wtm8x")
