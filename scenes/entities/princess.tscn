@@ -4,9 +4,38 @@
 [ext_resource type="Script" uid="uid://xr3y0wbs3xcs" path="res://src/entities/princess.gd" id="1_yeve7"]
 [ext_resource type="Texture2D" uid="uid://din757jrudeij" path="res://data/textures/prototype_no_license/147858-professional-woman-business-hd-image-free.png" id="2_rai6k"]
 [ext_resource type="Texture2D" uid="uid://2073cs83khtt" path="res://data/textures/prototype_no_license/pngtree-light-spotlight-png-image_7506250.png" id="3_rai6k"]
+[ext_resource type="Texture2D" uid="uid://buhhl36hskbuo" path="res://data/textures/Game_jam_princess_happy1.png" id="5_v5l71"]
+[ext_resource type="Texture2D" uid="uid://ciqnab6ahq6ym" path="res://data/textures/Game_jam_princess_happy_2.png" id="6_pv5s0"]
+[ext_resource type="Texture2D" uid="uid://dqgukyh25lbrh" path="res://data/textures/Game_jam_princess.png" id="7_e2qew"]
+[ext_resource type="Texture2D" uid="uid://dvyf0hriqas1s" path="res://data/textures/Game_jam_princess_2.png" id="8_d8xpo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rai6k"]
 size = Vector2(54, 49.19)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wtm8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_v5l71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pv5s0")
+}],
+"loop": 1,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_e2qew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_d8xpo")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="princess" type="Node2D" unique_id=1985838848]
 script = ExtResource("1_yeve7")
@@ -20,9 +49,10 @@ emission_shape = 1
 emission_sphere_radius = 25.6
 gravity = Vector2(0, 2)
 scale_amount_min = 0.01
-scale_amount_max = 0.02
+scale_amount_max = 0.01
 
 [node name="sprite2D" type="Sprite2D" parent="." unique_id=1065489856]
+visible = false
 rotation = 3.1415925
 scale = Vector2(0.018, -0.011)
 texture = ExtResource("2_rai6k")
@@ -68,5 +98,11 @@ fit_content = true
 visible = false
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("3_rai6k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1818580345]
+sprite_frames = SubResource("SpriteFrames_wtm8x")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.5912102
 
 [connection signal="area_entered" from="sprite2D/Area2D" to="." method="_on_area_2d_area_entered"]
