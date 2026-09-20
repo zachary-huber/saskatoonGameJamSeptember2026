@@ -71,6 +71,7 @@ func setRunEndTimeTicks() -> void:
 
 # Make player die and probably end the run.
 func killPlayer() -> void:
+	print("we died")
 	pass
 
 func teleportToPrincess() -> void:

@@ -20,6 +20,7 @@ var v_jump_dist : int = 400 ## PLAYER CAN JUMP 17 BLOCKS HIGH
 @onready var right_side: Node2D = $RightSide
 @onready var left_side: Node2D = $LeftSide
 @onready var anchor: Node2D = $Anchor
+@onready var interact_area: Area2D = $interactArea
 @onready var jump_direction_pivot: Marker2D = $Anchor/JumpDirectionPivot
 @onready var jump_direction: Marker2D = $Anchor/JumpDirectionPivot/JumpDirection
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
@@ -152,7 +153,10 @@ func apply_movement(direction : float) -> void:
 	global_position.x = lerp(global_position.x,middle_1.get_collision_point().x + direction * 10, 0.1)
 
 func bonk(body : Node2D) -> void:
-	if abs(velocity.x) > 7 or abs(velocity.y) > 7:
+	if body.is_in_group("killer"):
+		GameManager.killPlayer()
+	
+	elif abs(velocity.x) > 7 or abs(velocity.y) > 7:
 		audio_stream_player_2d.play()
 
 func find_velocity() -> void:
