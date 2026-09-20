@@ -75,7 +75,8 @@ func killPlayer() -> void:
 	pass
 
 func teleportToPrincess() -> void:
-	player.global_position = princess.global_position + Vector2(-50.0, -200.0)
+	if princess:
+		player.global_position = princess.global_position + Vector2(-50.0, -200.0)
 
 # Parse command and do something or call some function
 func issueCommand(thisCommand:HUD.Commands) -> void:

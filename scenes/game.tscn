@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bpheym1xu7oo3"]
 
-[ext_resource type="PackedScene" uid="uid://ddj6q6kgkvkck" path="res://scenes/levelParts/level.tscn" id="1_uwrxv"]
+[ext_resource type="PackedScene" uid="uid://dkc4buq4b8lyu" path="res://scenes/levelParts/TheTower.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://d4hfgxt1op56d" path="res://scenes/UI/hud.tscn" id="2_yqjtg"]
 
 [node name="Game" type="Node" unique_id=1457452227]
 
-[node name="level" parent="." unique_id=617202857 instance=ExtResource("1_uwrxv")]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2010805581]
 
 [node name="HUD" parent="CanvasLayer" unique_id=1919242333 instance=ExtResource("2_yqjtg")]
+
+[node name="TheTower" parent="." unique_id=876320076 instance=ExtResource("2_lnu2h")]
