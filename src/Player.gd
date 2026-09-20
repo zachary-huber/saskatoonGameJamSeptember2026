@@ -136,7 +136,7 @@ func _physics_process(delta: float) -> void:
 			disable_standing()
 	else:
 		find_velocity()
-		constant_torque = direction * 5000
+		constant_torque = direction * 2000
 	
 	if setting_direction:
 		if jump_direction_pivot.rotation_degrees > 0:
