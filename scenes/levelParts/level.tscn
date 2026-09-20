@@ -4,6 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://c03im32oyfjbx" path="res://scenes/entities/princess.tscn" id="3_y01qp"]
 [ext_resource type="Texture2D" uid="uid://cbyemwb4g2r8o" path="res://data/textures/Spikes.png" id="4_2ivrr"]
 [ext_resource type="TileSet" uid="uid://co3tsbjwdio8o" path="res://data/textures/environment_tile_set.tres" id="4_aq7ig"]
+[ext_resource type="Texture2D" uid="uid://pt4l8kxoedls" path="res://data/textures/BG_parallax/Game_jam_BG.png" id="5_weqe4"]
+[ext_resource type="Texture2D" uid="uid://dgxv35mplaxh2" path="res://data/textures/BG_parallax/Game_jam_BG_clouds.png" id="6_7lfhk"]
+[ext_resource type="Texture2D" uid="uid://cnjmtp6gmsxhs" path="res://data/textures/BG_parallax/Game_jam_BG_clouds2.png" id="7_m8c68"]
+[ext_resource type="Texture2D" uid="uid://cbqh14iqhima4" path="res://data/textures/BG_parallax/Game_jam_BG_hills.png" id="8_fip2a"]
+[ext_resource type="Texture2D" uid="uid://bd0n4jw83llyg" path="res://data/textures/BG_parallax/Game_jam_BG_hills2.png" id="9_n6qan"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2en0l"]
 resource_name = "Spikes"
@@ -55,9 +60,6 @@ sources/0 = SubResource("TileSetAtlasSource_2en0l")
 
 [node name="level" type="Node2D" unique_id=617202857]
 
-[node name="Node3D" parent="." unique_id=1309050463 instance=ExtResource("2_w7c3h")]
-position = Vector2(70, -57)
-
 [node name="princess" parent="." unique_id=1985838848 instance=ExtResource("3_y01qp")]
 position = Vector2(48, -164)
 
@@ -68,3 +70,55 @@ tile_set = ExtResource("4_aq7ig")
 [node name="Killers" type="TileMapLayer" parent="." unique_id=1943660922 groups=["killer"]]
 tile_map_data = PackedByteArray("AAAQAAUAAAAAAAAAAAARAAUAAAAAAAAAAAASAAUAAAAAAAAAAAATAAUAAAAAAAAAAAAUAAUAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_fit24")
+
+[node name="player" parent="." unique_id=172420841 instance=ExtResource("2_w7c3h")]
+position = Vector2(-138, -127)
+
+[node name="Camera2D" type="Camera2D" parent="player" unique_id=1024026383]
+
+[node name="parallaxBG" type="Node2D" parent="." unique_id=1823841543]
+
+[node name="skyBG" type="Parallax2D" parent="parallaxBG" unique_id=1131779565]
+z_index = -1
+scroll_scale = Vector2(0.2, 0.2)
+repeat_size = Vector2(380, 255)
+
+[node name="Sprite2D" type="Sprite2D" parent="parallaxBG/skyBG" unique_id=1279129687]
+z_index = -1
+texture = ExtResource("5_weqe4")
+
+[node name="cloudsBack" type="Parallax2D" parent="parallaxBG" unique_id=1205289163]
+z_index = -1
+scroll_scale = Vector2(0.3, 0.3)
+repeat_size = Vector2(380, 255)
+
+[node name="Sprite2D" type="Sprite2D" parent="parallaxBG/cloudsBack" unique_id=1584203114]
+z_index = -1
+texture = ExtResource("6_7lfhk")
+
+[node name="cloudsFront" type="Parallax2D" parent="parallaxBG" unique_id=1467163890]
+z_index = -1
+scroll_scale = Vector2(0.4, 0.4)
+repeat_size = Vector2(380, 255)
+
+[node name="Sprite2D" type="Sprite2D" parent="parallaxBG/cloudsFront" unique_id=1364233224]
+z_index = -1
+texture = ExtResource("7_m8c68")
+
+[node name="mountainsBack" type="Parallax2D" parent="parallaxBG" unique_id=1995319224]
+z_index = -1
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(380, 255)
+
+[node name="Sprite2D" type="Sprite2D" parent="parallaxBG/mountainsBack" unique_id=2013842417]
+z_index = -1
+texture = ExtResource("8_fip2a")
+
+[node name="mountainsFront" type="Parallax2D" parent="parallaxBG" unique_id=1847989284]
+z_index = -1
+scroll_scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(380, 255)
+
+[node name="Sprite2D" type="Sprite2D" parent="parallaxBG/mountainsFront" unique_id=570512638]
+z_index = -1
+texture = ExtResource("9_n6qan")
