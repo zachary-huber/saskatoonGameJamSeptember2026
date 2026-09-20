@@ -2,6 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cltxyrhbu5idg" path="res://data/themes/mainTheme.tres" id="1_g3j2f"]
 [ext_resource type="Texture2D" uid="uid://bb8juqvdhqqm7" path="res://data/textures/Game_jam_game_over.png" id="2_jq8gn"]
+[ext_resource type="Script" uid="uid://drqpsygut7pql" path="res://src/UI/credits.gd" id="2_nioxy"]
 [ext_resource type="PackedScene" uid="uid://cna7gf6c7n2n1" path="res://scenes/UI/dev_button.tscn" id="3_nioxy"]
 [ext_resource type="Texture2D" uid="uid://bg878iex5a5ic" path="res://data/textures/Game_jam_game_over_YES2.png" id="4_q4wsr"]
 [ext_resource type="Texture2D" uid="uid://k04wqyc8uidp" path="res://data/textures/Game_jam_game_over_NO2.png" id="5_83fsw"]
@@ -22,6 +23,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_g3j2f")
+script = ExtResource("2_nioxy")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=292724763]
 layout_mode = 1
@@ -120,3 +122,13 @@ Fire crackling	DRAGON-STUDIO	https://pixabay.com/sound-effects/nature-fire-crack
 Crowd talking	Defeated_Sanity	https://pixabay.com/sound-effects/people-crowd-talking-16756/		
 Winter wind	DRAGON-STUDIO	https://pixabay.com/sound-effects/nature-winter-wind-402331/		
 Victory	Universfield	https://pixabay.com/sound-effects/musical-victory-fanfare-152480/		"
+
+[node name="mainMenuButton" type="Button" parent="." unique_id=1925696093]
+layout_mode = 0
+offset_left = 585.0
+offset_top = 555.0
+offset_right = 661.0
+offset_bottom = 580.0
+text = "Main Menu"
+
+[connection signal="pressed" from="mainMenuButton" to="." method="_on_main_menu_button_pressed"]
