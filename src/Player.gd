@@ -9,8 +9,8 @@ var cur_pos : Vector2
 var last_pos : Vector2
 var velocity : Vector2
 
-var h_jump_dist : int = 150
-var v_jump_dist : int = 400
+var h_jump_dist : int = 150 ## Player can jump 25 blocks horizontally
+var v_jump_dist : int = 400 ## PLAYER CAN JUMP 17 BLOCKS HIGH
 
 @onready var middle_1: RayCast2D = $Middle1
 @onready var middle_2: RayCast2D = $Middle2
